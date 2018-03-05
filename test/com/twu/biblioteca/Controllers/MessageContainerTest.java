@@ -3,14 +3,12 @@ package com.twu.biblioteca.Controllers;
 import com.twu.biblioteca.Models.Book;
 import com.twu.biblioteca.Utils.MessageContainer;
 import org.junit.Test;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
 
 
-public class MessageContainerTest {
+public class MessageContainerTest extends TestUtils{
 
     @Test
     public void testGetWelcomeMessage() {
@@ -31,14 +29,7 @@ public class MessageContainerTest {
         expected += "| Book 2 |\n";
         expected += "| Book 3 |\n";
 
-
-        Book b1 = new Book("Book 1");
-        Book b2 = new Book("Book 2");
-        Book b3 = new Book("Book 3");
-        List<Book> bookList = new ArrayList<Book>();
-        bookList.add(b1);
-        bookList.add(b2);
-        bookList.add(b3);
+        List<Book> bookList = getBooks();
 
         assertEquals(expected, container.getBookList(bookList));
     }

@@ -6,20 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 import static junit.framework.TestCase.assertEquals;
 
-public class BookManagerTest {
+public class BookManagerTest extends TestUtils {
 
     @Test
     public void testGetBookList(){
-        List<Book> books = new ArrayList<Book>();
-        books.add(new Book("Book 1"));
-        books.add(new Book("Book 2"));
-        books.add(new Book("Book 3"));
+        List<Book> expected = getBooks();
 
         BookManager man = new BookManager();
         List<Book> results = man.getBookList();
 
-        assertEquals(books.get(0), results.get(0));
-        assertEquals(books.get(1), results.get(1));
-        assertEquals(books.get(2), results.get(2));
+        assertEquals(expected.get(0), results.get(0));
+        assertEquals(expected.get(1), results.get(1));
+        assertEquals(expected.get(2), results.get(2));
     }
 }
