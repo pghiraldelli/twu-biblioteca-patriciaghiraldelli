@@ -1,6 +1,9 @@
 package com.twu.biblioteca.Controllers;
 
-public class ConsoleManager extends Manager {
+import com.twu.biblioteca.Utils.IOManager;
+import com.twu.biblioteca.Utils.MessageContainer;
+
+public class ConsoleManager extends BookManager {
     private IOManager iom = new IOManager();
 
     public void mainMenu(){

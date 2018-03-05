@@ -1,7 +1,7 @@
 package com.twu.biblioteca.Controllers;
 
 import com.twu.biblioteca.Models.Book;
-import com.twu.biblioteca.Controllers.MessageContainer;
+import com.twu.biblioteca.Utils.MessageContainer;
 import org.junit.Test;
 
 import java.util.ArrayList;

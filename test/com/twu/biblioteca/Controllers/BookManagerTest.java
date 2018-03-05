@@ -2,13 +2,11 @@ package com.twu.biblioteca.Controllers;
 
 import com.twu.biblioteca.Models.Book;
 import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static junit.framework.TestCase.assertEquals;
 
-public class ManagerTest {
+public class BookManagerTest {
 
     @Test
     public void testGetBookList(){
@@ -17,7 +15,7 @@ public class ManagerTest {
         books.add(new Book("Book 2"));
         books.add(new Book("Book 3"));
 
-        Manager man = new Manager();
+        BookManager man = new BookManager();
         List<Book> results = man.getBookList();
 
         assertEquals(books.get(0), results.get(0));

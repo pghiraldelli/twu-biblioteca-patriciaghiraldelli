@@ -4,10 +4,10 @@ import com.twu.biblioteca.Models.Book;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Manager {
+public class BookManager {
     private List<Book> bookList;
 
-    public Manager(){
+    public BookManager(){
         this.bookList = createBookList();
 
     }
