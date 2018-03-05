@@ -18,13 +18,13 @@ public class BookManager {
 
     private List<Book> createBookList(){
         List<Book> books = new ArrayList<Book>();
-        books.add(createBook("Book 1"));
-        books.add(createBook("Book 2"));
-        books.add(createBook("Book 3"));
+        books.add(createBook("Book 1", "Author 1", "1994"));
+        books.add(createBook("Book 2", "Author 2", "2018"));
+        books.add(createBook("Book 3", "Author 3", "2000"));
         return books;
     }
 
-    private Book createBook(String title){
-        return new Book(title);
+    private Book createBook(String title, String author, String year){
+        return new Book(title, author, year);
     }
 }

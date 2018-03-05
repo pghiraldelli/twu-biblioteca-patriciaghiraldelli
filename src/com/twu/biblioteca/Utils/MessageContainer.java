@@ -5,6 +5,8 @@ import java.util.List;
 
 public class MessageContainer {
 
+    private static final int BOOKGRID_COLUMN_SIZE =  20;
+
     public static String getWelcomeMessage(){
         return "~~~~ Welcome to Biblioteca! ~~~~";
     }
@@ -16,7 +18,7 @@ public class MessageContainer {
     }
 
     private static String getActionTitle(String title){
-        String str = "\n---------------------------\n";
+        String str = "\n-----------------------------\n";
         str +=       "    ***  Book List  ***    \n";
         str +=       "-----------------------------\n";
         return str;
@@ -25,8 +27,10 @@ public class MessageContainer {
     private static String getBookGrid(List<Book> books){
         String str = "";
         for (Book book: books) {
-            str +="| "+book.getTitle()+" |\n";
+            str +="| "+book.getTitle()+" | "+book.getAuthor()+" | "+book.getYear()+" |\n";
         }
         return str;
     }
+
+    //TODO: Method to format grid to different sizes of strings
 }

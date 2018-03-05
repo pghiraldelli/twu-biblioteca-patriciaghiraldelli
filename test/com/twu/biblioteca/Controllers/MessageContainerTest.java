@@ -22,15 +22,14 @@ public class MessageContainerTest extends TestUtils{
     public void testGetBookList(){
         MessageContainer container = new MessageContainer();
 
-        String expected = "\n---------------------------\n";
+        String expected = "\n-----------------------------\n";
         expected +=       "    ***  Book List  ***    \n";
         expected +=       "-----------------------------\n";
-        expected += "| Book 1 |\n";
-        expected += "| Book 2 |\n";
-        expected += "| Book 3 |\n";
+        expected += "| Book 1 | Author 1 | 1994 |\n";
+        expected += "| Book 2 | Author 2 | 2018 |\n";
+        expected += "| Book 3 | Author 3 | 2000 |\n";
 
-        List<Book> bookList = getBooks();
-
-        assertEquals(expected, container.getBookList(bookList));
+        String result = container.getBookList(getBooks());
+        assertEquals(expected, result);
     }
 }
