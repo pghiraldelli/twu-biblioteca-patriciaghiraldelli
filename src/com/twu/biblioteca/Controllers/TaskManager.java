@@ -20,7 +20,7 @@ public class TaskManager extends BookManager{
     }
 
     private void showBookList(){
-        this.iom.printString(MessageContainer.getBookList(this.getBookList()));
+        this.iom.printString(MessageContainer.getBookDetails(this.getBookList()));
     }
 
     private void invalidOptionMessage(){

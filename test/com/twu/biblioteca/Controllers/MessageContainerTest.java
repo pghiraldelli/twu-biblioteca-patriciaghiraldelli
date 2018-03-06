@@ -20,13 +20,13 @@ public class MessageContainerTest extends TestUtils{
         MessageContainer container = new MessageContainer();
 
         String expected = "\n-----------------------------\n";
-        expected +=       "    ***  Book List  ***    \n";
+        expected +=       "    ***  Book Details  ***    \n";
         expected +=       "-----------------------------\n";
         expected += "| Book 1 | Author 1 | 1994 |\n";
         expected += "| Book 2 | Author 2 | 2018 |\n";
         expected += "| Book 3 | Author 3 | 2000 |\n";
 
-        String result = container.getBookList(getBooks());
+        String result = container.getBookDetails(getBooks());
         assertEquals(expected, result);
     }
 
