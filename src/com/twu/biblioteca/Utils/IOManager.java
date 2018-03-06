@@ -15,10 +15,9 @@ public class IOManager {
             String input = br.readLine();
             return Integer.parseInt(input);
         } catch (Exception e) {
-            System.out.println("Error reading the input.");
         }
 
-        return 0;
+        return 100;
     }
 
 }
