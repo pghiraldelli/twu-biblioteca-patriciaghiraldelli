@@ -35,6 +35,7 @@ public class MessageContainerTest extends TestUtils{
         String expected = "\n-----------------------------\n";
         expected +=       "    ***  Menu  ***    \n";
         expected +=       "-----------------------------\n";;
+        expected +=        "|    0- Quit                |\n";
         expected +=        "|    1- Book details        |\n";
 
         assertEquals(expected, MessageContainer.getMenuOptions());

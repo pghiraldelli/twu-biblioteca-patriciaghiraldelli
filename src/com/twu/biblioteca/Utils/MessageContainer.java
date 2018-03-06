@@ -37,7 +37,8 @@ public class MessageContainer {
     }
 
     private static String getMenuGrid(){
-        String str =        "|    1- Book details        |\n";
+        String str =        "|    0- Quit                |\n";
+        str +=              "|    1- Book details        |\n";
         return str;
     }
 

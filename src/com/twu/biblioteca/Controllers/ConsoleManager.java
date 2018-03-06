@@ -3,17 +3,20 @@ package com.twu.biblioteca.Controllers;
 import com.twu.biblioteca.Utils.MessageContainer;
 
 public class ConsoleManager extends TaskManager {
-
+    private boolean runningTasks = true;
 
     public void mainMenu(){
         showWelcomeMessage();
-        runMenu();
+        while(runningTasks){
+            runningTasks = runMenu();
+        }
+
     }
 
-    private void runMenu(){
+    private boolean runMenu(){
         showMenuOptions();
         int option = askForInt("Escolha a opção do menu:");
-        runTask(option);
+        return runTask(option);
     }
 
     private int askForInt(String text){
