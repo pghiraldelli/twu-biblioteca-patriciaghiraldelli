@@ -14,7 +14,7 @@ public class ConsoleManager extends TaskManager {
 
     private boolean runMenu(){
         showMenuOptions();
-        int option = askForInt("Escolha a opção do menu:");
+        int option = askForInt("Choose the menu option:");
         return runTask(option);
     }
 
@@ -51,7 +51,7 @@ public class ConsoleManager extends TaskManager {
     }
 
     private void runCheckout(){
-        this.iom.printString("Enter the number of the book to checkout: ");
+        this.iom.printString("\nEnter the number of the book to checkout: ");
         int index = this.iom.readInt();
         boolean success = checkoutBook(index);
         showFinalMessageToCheckout(success);
@@ -72,7 +72,7 @@ public class ConsoleManager extends TaskManager {
         }
 
         showCheckedBookList();
-        this.iom.printString("Enter the number of the book to checkout: ");
+        this.iom.printString("Enter the number of the book to return: ");
         int index = this.iom.readInt();
         boolean success = returnBook(index);
         showFinalMessageToReturn(success);
