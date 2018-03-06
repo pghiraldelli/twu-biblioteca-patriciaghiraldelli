@@ -5,6 +5,8 @@ import java.util.List;
 
 public class MessageContainer {
 
+    private static int MESSAGE_SIZE = 32;
+
     public static String getWelcomeMessage(){
         return "~~~~ Welcome to Biblioteca! ~~~~";
     }
@@ -23,7 +25,7 @@ public class MessageContainer {
 
     private static String getActionTitle(String title){
         String str = "\n--------------------------------\n";
-        str +=       "    ***  "+title+"  ***    \n";
+        str +=  centralizeString("***  "+title+"  ***", MESSAGE_SIZE)+"\n";
         str +=       "--------------------------------\n";
         return str;
     }
@@ -41,6 +43,24 @@ public class MessageContainer {
         String str =        "|    0- Quit                |\n";
         str +=              "|    1- Book details        |\n";
         return str;
+    }
+
+    private static String centralizeString(String str, int size){
+        int totalSpaces = size - str.length();
+        if(totalSpaces <= 0) return str.substring(0, size);
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < totalSpaces/2 ; i++) {
+            sb.append(" ");
+        }
+
+        sb.append(str);
+
+        for (int i = 0; i < totalSpaces/2 ; i++) {
+            sb.append(" ");
+        }
+
+        return sb.toString();
     }
 
     //TODO: Method to format grid to different sizes of strings

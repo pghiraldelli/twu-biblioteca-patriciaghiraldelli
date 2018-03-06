@@ -20,7 +20,7 @@ public class MessageContainerTest extends TestUtils{
         MessageContainer container = new MessageContainer();
 
         String expected = "\n--------------------------------\n";
-        expected +=       "    ***  Book Details  ***    \n";
+        expected +=       "     ***  Book Details  ***     \n";
         expected +=       "--------------------------------\n";
         expected += "| 0 | Book 1 | Author 1 | 1994 |\n";
         expected += "| 1 | Book 2 | Author 2 | 2018 |\n";
@@ -33,7 +33,7 @@ public class MessageContainerTest extends TestUtils{
     @Test
     public void testGetMenuOptions(){
         String expected = "\n--------------------------------\n";
-        expected +=       "    ***  Menu  ***    \n";
+        expected +=       "         ***  Menu  ***         \n";
         expected +=       "--------------------------------\n";;
         expected +=        "|    0- Quit                |\n";
         expected +=        "|    1- Book details        |\n";
