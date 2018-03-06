@@ -12,10 +12,16 @@ public class TaskManager extends BookManager{
             case 1:
                 showBookList();
                 break;
+            default:
+                invalidOptionMessage();
         }
     }
 
-    protected void showBookList(){
+    private void showBookList(){
         this.iom.printString(MessageContainer.getBookList(this.getBookList()));
+    }
+
+    private void invalidOptionMessage(){
+        this.iom.printString("\n::Error:: Select a valid option!");
     }
 }
