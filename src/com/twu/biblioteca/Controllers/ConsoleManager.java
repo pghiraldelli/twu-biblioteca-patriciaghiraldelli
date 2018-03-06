@@ -29,7 +29,6 @@ public class ConsoleManager extends TaskManager {
                 runCheckout();
                 break;
             case 3:
-                showCheckedBookList();
                 runReturnBook();
                 break;
             default:
@@ -67,6 +66,12 @@ public class ConsoleManager extends TaskManager {
     }
 
     private void runReturnBook(){
+        if(getCheckedoutBookList().size() == 0){
+            this.iom.printString("\n::Attention:: There are no books to return. Choose another option.");
+            return;
+        }
+
+        showCheckedBookList();
         this.iom.printString("Enter the number of the book to checkout: ");
         int index = this.iom.readInt();
         boolean success = returnBook(index);
