@@ -5,10 +5,14 @@ import java.util.List;
 
 public class MessageContainer {
 
-    private static final int BOOKGRID_COLUMN_SIZE =  20;
-
     public static String getWelcomeMessage(){
         return "~~~~ Welcome to Biblioteca! ~~~~";
+    }
+
+    public static String getMenuOptions(){
+        String menu = getActionTitle("Menu");
+        menu += getMenuGrid();
+        return menu;
     }
 
     public static String getBookList(List<Book> books){
@@ -19,7 +23,7 @@ public class MessageContainer {
 
     private static String getActionTitle(String title){
         String str = "\n-----------------------------\n";
-        str +=       "    ***  Book List  ***    \n";
+        str +=       "    ***  "+title+"  ***    \n";
         str +=       "-----------------------------\n";
         return str;
     }
@@ -29,6 +33,11 @@ public class MessageContainer {
         for (Book book: books) {
             str +="| "+book.getTitle()+" | "+book.getAuthor()+" | "+book.getYear()+" |\n";
         }
+        return str;
+    }
+
+    private static String getMenuGrid(){
+        String str =        "|    1- Book details        |\n";
         return str;
     }
 

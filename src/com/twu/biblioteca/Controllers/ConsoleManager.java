@@ -1,21 +1,31 @@
 package com.twu.biblioteca.Controllers;
 
-import com.twu.biblioteca.Utils.IOManager;
 import com.twu.biblioteca.Utils.MessageContainer;
 
-public class ConsoleManager extends BookManager {
-    private IOManager iom = new IOManager();
+public class ConsoleManager extends TaskManager {
+
 
     public void mainMenu(){
         showWelcomeMessage();
-        showBookList();
+        runMenu();
+    }
+
+    private void runMenu(){
+        showMenuOptions();
+        int option = askForInt("Escolha a opção do menu:");
+        runTask(option);
+    }
+
+    private int askForInt(String text){
+        System.out.println(text);
+        return this.iom.readInt();
+    }
+
+    private void showMenuOptions(){
+        this.iom.printString(MessageContainer.getMenuOptions());
     }
 
     private void showWelcomeMessage(){
         this.iom.printString(MessageContainer.getWelcomeMessage());
-    }
-
-    private void showBookList(){
-        this.iom.printString(MessageContainer.getBookList(this.getBookList()));
     }
 }

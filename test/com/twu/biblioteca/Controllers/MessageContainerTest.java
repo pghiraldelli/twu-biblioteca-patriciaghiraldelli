@@ -1,10 +1,7 @@
 package com.twu.biblioteca.Controllers;
 
-import com.twu.biblioteca.Models.Book;
 import com.twu.biblioteca.Utils.MessageContainer;
 import org.junit.Test;
-import java.util.List;
-
 import static junit.framework.TestCase.assertEquals;
 
 
@@ -31,5 +28,15 @@ public class MessageContainerTest extends TestUtils{
 
         String result = container.getBookList(getBooks());
         assertEquals(expected, result);
+    }
+
+    @Test
+    public void testGetMenuOptions(){
+        String expected = "\n-----------------------------\n";
+        expected +=       "    ***  Menu  ***    \n";
+        expected +=       "-----------------------------\n";;
+        expected +=        "|    1- Book details        |\n";
+
+        assertEquals(expected, MessageContainer.getMenuOptions());
     }
 }
