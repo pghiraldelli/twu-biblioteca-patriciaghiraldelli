@@ -31,12 +31,14 @@ public class MessageContainerTest extends TestUtils{
     }
 
     @Test
-    public void testGetMenuOptions(){
+    public void testGetMenuOptions() {
         String expected = "\n--------------------------------\n";
-        expected +=       "         ***  Menu  ***         \n";
-        expected +=       "--------------------------------\n";;
-        expected +=        "|    0- Quit                |\n";
-        expected +=        "|    1- Book details        |\n";
+        expected += "         ***  Menu  ***         \n";
+        expected += "--------------------------------\n";
+        ;
+        expected += "|    0- Quit                |\n";
+        expected += "|    1- Book details        |\n";
+        expected += "|    2- Checkout book       |\n";
 
         assertEquals(expected, MessageContainer.getMenuOptions());
     }

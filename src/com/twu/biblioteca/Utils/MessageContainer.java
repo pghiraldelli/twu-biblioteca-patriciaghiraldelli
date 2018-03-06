@@ -42,6 +42,7 @@ public class MessageContainer {
     private static String getMenuGrid(){
         String str =        "|    0- Quit                |\n";
         str +=              "|    1- Book details        |\n";
+        str +=              "|    2- Checkout book       |\n";
         return str;
     }
 
@@ -62,6 +63,4 @@ public class MessageContainer {
 
         return sb.toString();
     }
-
-    //TODO: Method to format grid to different sizes of strings
 }

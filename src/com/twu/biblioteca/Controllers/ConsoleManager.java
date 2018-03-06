@@ -10,13 +10,28 @@ public class ConsoleManager extends TaskManager {
         while(runningTasks){
             runningTasks = runMenu();
         }
-
     }
 
     private boolean runMenu(){
         showMenuOptions();
         int option = askForInt("Escolha a opção do menu:");
         return runTask(option);
+    }
+
+    protected boolean runTask(int option){
+        switch (option){
+            case 0:
+                return false;
+            case 1:
+                showBookList();
+                break;
+            case 2:
+                runCheckout();
+                break;
+            default:
+                invalidOptionMessage();
+        }
+        return true;
     }
 
     private int askForInt(String text){
@@ -30,5 +45,11 @@ public class ConsoleManager extends TaskManager {
 
     private void showWelcomeMessage(){
         this.iom.printString(MessageContainer.getWelcomeMessage());
+    }
+
+    private void runCheckout(){
+        this.iom.printString("Enter the number of the book to checkout: ");
+        int index = this.iom.readInt();
+        checkoutBook(index);
     }
 }

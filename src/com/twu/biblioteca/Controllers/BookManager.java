@@ -27,4 +27,8 @@ public class BookManager {
     private Book createBook(String title, String author, String year){
         return new Book(title, author, year);
     }
+
+    protected void removeBook(int index){
+        this.bookList.remove(index);
+    }
 }

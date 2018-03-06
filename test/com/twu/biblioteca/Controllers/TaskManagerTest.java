@@ -1,25 +1,20 @@
 package com.twu.biblioteca.Controllers;
 
+import com.twu.biblioteca.Models.Book;
 import org.junit.Test;
 import static junit.framework.TestCase.*;
 
 public class TaskManagerTest {
 
     @Test
-    public void testRunTask_OptionZero_shouldReturnFalse(){
+    public void testCheckoutBook_existingBook_shouldRemoveBook(){
+        int indexToRemove = 0;
         TaskManager tm = new TaskManager();
-        assertFalse(tm.runTask(0));
-    }
 
-    @Test
-    public void testRunTask_Option1_shouldReturnTrue(){
-        TaskManager tm = new TaskManager();
-        assertTrue(tm.runTask(1));
-    }
+        Book bookToCheckout = tm.getBookList().get(indexToRemove);
 
-    @Test
-    public void testRunTask_Option100_shouldReturnTrue(){
-        TaskManager tm = new TaskManager();
-        assertTrue(tm.runTask(100));
+        tm.checkoutBook(0);
+
+        assertFalse(tm.getBookList().get(indexToRemove).equals(bookToCheckout));
     }
 }
