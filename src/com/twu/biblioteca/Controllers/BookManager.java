@@ -1,7 +1,6 @@
 package com.twu.biblioteca.Controllers;
 
 import com.twu.biblioteca.Models.Book;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +37,15 @@ public class BookManager {
         this.bookList.remove(index);
     }
 
+    protected void addBook(Book book){
+        this.bookList.add(book);
+    }
+
     protected void addCheckedoutBook(Book book){
         this.checkedOutBooks.add(book);
+    }
+
+    protected void removeCheckedoutBook(int index){
+        this.checkedOutBooks.remove(index);
     }
 }

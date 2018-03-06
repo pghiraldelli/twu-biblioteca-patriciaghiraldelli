@@ -17,8 +17,8 @@ public class MessageContainer {
         return menu;
     }
 
-    public static String getBookDetails(List<Book> books){
-        String bookList = getActionTitle("Book Details");
+    public static String getBookDetails(List<Book> books, String title){
+        String bookList = getActionTitle(title);
         bookList += getBookGrid(books);
         return bookList;
     }
@@ -43,6 +43,7 @@ public class MessageContainer {
         String str =        "|    0- Quit                |\n";
         str +=              "|    1- Book details        |\n";
         str +=              "|    2- Checkout book       |\n";
+        str +=              "|    3- Return book         |\n";
         return str;
     }
 

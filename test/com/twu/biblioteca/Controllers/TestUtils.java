@@ -12,4 +12,9 @@ public class TestUtils {
         books.add(new Book("Book 3", "Author 3", "2000"));
         return books;
     }
+
+    public void insertCheckedoutBook(TaskManager tm){
+        Book book = new Book("Book", "Author", "1990");
+        tm.addCheckedoutBook(book);
+    }
 }

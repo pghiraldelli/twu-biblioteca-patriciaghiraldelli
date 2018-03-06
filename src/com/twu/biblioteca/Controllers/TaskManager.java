@@ -8,7 +8,11 @@ public class TaskManager extends BookManager{
     protected IOManager iom = new IOManager();
 
     protected void showBookList(){
-        this.iom.printString(MessageContainer.getBookDetails(this.getBookList()));
+        this.iom.printString(MessageContainer.getBookDetails(this.getBookList(), "Book details"));
+    }
+
+    protected void showCheckedBookList(){
+        this.iom.printString(MessageContainer.getBookDetails(this.getCheckedoutBookList(), "Books to return"));
     }
 
     protected void invalidOptionMessage(){
@@ -21,6 +25,15 @@ public class TaskManager extends BookManager{
         Book book = getBookList().get(index);
         removeBook(index);
         addCheckedoutBook(book);
+        return true;
+    }
+
+    protected boolean returnBook(int index){
+        if(index >= getCheckedoutBookList().size()) return false;
+
+        Book book = getCheckedoutBookList().get(index);
+        removeCheckedoutBook(index);
+        addBook(book);
         return true;
     }
 }

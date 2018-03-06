@@ -28,6 +28,10 @@ public class ConsoleManager extends TaskManager {
             case 2:
                 runCheckout();
                 break;
+            case 3:
+                showCheckedBookList();
+                runReturnBook();
+                break;
             default:
                 invalidOptionMessage();
         }
@@ -60,5 +64,20 @@ public class ConsoleManager extends TaskManager {
             return;
         }
         this.iom.printString("\n::Error:: That book is not available\n");
+    }
+
+    private void runReturnBook(){
+        this.iom.printString("Enter the number of the book to checkout: ");
+        int index = this.iom.readInt();
+        boolean success = returnBook(index);
+        showFinalMessageToReturn(success);
+    }
+
+    private void showFinalMessageToReturn(boolean success){
+        if(success) {
+            this.iom.printString("\n::Success:: Thank you for returning the book.\n");
+            return;
+        }
+        this.iom.printString("\n::Error:: That is not a valid book to return.\n");
     }
 }

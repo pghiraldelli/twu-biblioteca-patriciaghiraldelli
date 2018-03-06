@@ -26,7 +26,7 @@ public class MessageContainerTest extends TestUtils{
         expected += "| 1 | Book 2 | Author 2 | 2018 |\n";
         expected += "| 2 | Book 3 | Author 3 | 2000 |\n";
 
-        String result = container.getBookDetails(getBooks());
+        String result = container.getBookDetails(getBooks(), "Book Details");
         assertEquals(expected, result);
     }
 
@@ -39,6 +39,7 @@ public class MessageContainerTest extends TestUtils{
         expected += "|    0- Quit                |\n";
         expected += "|    1- Book details        |\n";
         expected += "|    2- Checkout book       |\n";
+        expected += "|    3- Return book         |\n";
 
         assertEquals(expected, MessageContainer.getMenuOptions());
     }

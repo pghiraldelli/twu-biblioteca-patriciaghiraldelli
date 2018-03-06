@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.List;
 import static junit.framework.TestCase.*;
 
-public class TaskManagerTest {
+public class TaskManagerTest extends TestUtils{
 
     @Test
     public void testCheckoutBook_existingBook_shouldRemoveBook(){
@@ -31,5 +31,32 @@ public class TaskManagerTest {
         assertEquals(tm.getBookList().get(2), booksBefore.get(2));
 
         assertEquals(0, tm.getCheckedoutBookList().size());
+    }
+
+    @Test
+    public void testReturnBook_existingBook_shouldRemoveBook(){
+        int indexToRemove = 0;
+        TaskManager tm = new TaskManager();
+        insertCheckedoutBook(tm);
+
+        Book bookCheckedout = tm.getCheckedoutBookList().get(indexToRemove);
+
+        tm.returnBook(indexToRemove);
+
+        assertTrue(tm.getCheckedoutBookList().size() == 0);
+    }
+
+    @Test
+    public void testReturnBook_nonExistingBook_shouldKeepBookList(){
+        int indexToRemove = 100;
+        TaskManager tm = new TaskManager();
+        insertCheckedoutBook(tm);
+
+        List<Book> booksBefore = tm.getCheckedoutBookList();
+        tm.returnBook(indexToRemove);
+
+        assertEquals(tm.getCheckedoutBookList().get(0), booksBefore.get(0));
+
+        assertEquals(3, tm.getBookList().size());
     }
 }
