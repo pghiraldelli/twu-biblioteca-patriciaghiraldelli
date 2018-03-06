@@ -50,6 +50,15 @@ public class ConsoleManager extends TaskManager {
     private void runCheckout(){
         this.iom.printString("Enter the number of the book to checkout: ");
         int index = this.iom.readInt();
-        checkoutBook(index);
+        boolean success = checkoutBook(index);
+        showFinalMessageToCheckout(success);
+    }
+
+    private void showFinalMessageToCheckout(boolean success){
+        if(success) {
+            this.iom.printString("\n::Success:: Thank you! Enjoy the book.\n");
+            return;
+        }
+        this.iom.printString("\n::Error:: That book is not available\n");
     }
 }
