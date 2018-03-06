@@ -22,16 +22,17 @@ public class MessageContainer {
     }
 
     private static String getActionTitle(String title){
-        String str = "\n-----------------------------\n";
+        String str = "\n--------------------------------\n";
         str +=       "    ***  "+title+"  ***    \n";
-        str +=       "-----------------------------\n";
+        str +=       "--------------------------------\n";
         return str;
     }
 
     private static String getBookGrid(List<Book> books){
         String str = "";
-        for (Book book: books) {
-            str +="| "+book.getTitle()+" | "+book.getAuthor()+" | "+book.getYear()+" |\n";
+        for (int i = 0; i < books.size() ; i++) {
+            Book book = books.get(i);
+            str +="| "+i+" | "+book.getTitle()+" | "+book.getAuthor()+" | "+book.getYear()+" |\n";
         }
         return str;
     }

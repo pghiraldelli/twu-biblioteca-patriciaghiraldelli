@@ -19,12 +19,12 @@ public class MessageContainerTest extends TestUtils{
     public void testGetBookList(){
         MessageContainer container = new MessageContainer();
 
-        String expected = "\n-----------------------------\n";
+        String expected = "\n--------------------------------\n";
         expected +=       "    ***  Book Details  ***    \n";
-        expected +=       "-----------------------------\n";
-        expected += "| Book 1 | Author 1 | 1994 |\n";
-        expected += "| Book 2 | Author 2 | 2018 |\n";
-        expected += "| Book 3 | Author 3 | 2000 |\n";
+        expected +=       "--------------------------------\n";
+        expected += "| 0 | Book 1 | Author 1 | 1994 |\n";
+        expected += "| 1 | Book 2 | Author 2 | 2018 |\n";
+        expected += "| 2 | Book 3 | Author 3 | 2000 |\n";
 
         String result = container.getBookDetails(getBooks());
         assertEquals(expected, result);
@@ -32,9 +32,9 @@ public class MessageContainerTest extends TestUtils{
 
     @Test
     public void testGetMenuOptions(){
-        String expected = "\n-----------------------------\n";
+        String expected = "\n--------------------------------\n";
         expected +=       "    ***  Menu  ***    \n";
-        expected +=       "-----------------------------\n";;
+        expected +=       "--------------------------------\n";;
         expected +=        "|    0- Quit                |\n";
         expected +=        "|    1- Book details        |\n";
 
