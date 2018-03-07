@@ -1,15 +1,15 @@
 package com.twu.biblioteca.Controllers;
 
 import com.twu.biblioteca.Models.Book;
-import com.twu.biblioteca.Repository.BookService;
+import com.twu.biblioteca.Repository.BookRepository;
 import com.twu.biblioteca.Utils.IOManager;
 import com.twu.biblioteca.Utils.MessageContainer;
 
 public class TaskManager{
     private IOManager iom;
-    private BookService bs;
+    private BookRepository bs;
 
-    public TaskManager(IOManager iom, BookService bs) {
+    public TaskManager(IOManager iom, BookRepository bs) {
         this.iom = iom;
         this.bs = bs;
     }
@@ -48,7 +48,7 @@ public class TaskManager{
         return iom;
     }
 
-    public BookService getBookService() {
+    public BookRepository getBookService() {
         return bs;
     }
 }

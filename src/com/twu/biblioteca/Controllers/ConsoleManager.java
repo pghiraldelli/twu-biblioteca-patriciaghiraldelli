@@ -1,7 +1,7 @@
 package com.twu.biblioteca.Controllers;
 
 import com.twu.biblioteca.Models.Task;
-import com.twu.biblioteca.Repository.BookService;
+import com.twu.biblioteca.Repository.BookRepository;
 import com.twu.biblioteca.Utils.IOManager;
 import com.twu.biblioteca.Utils.MessageContainer;
 
@@ -10,7 +10,7 @@ public class ConsoleManager {
     private TaskManager taskMan;
 
     public ConsoleManager() {
-        BookService bookService = new BookService();
+        BookRepository bookService = new BookRepository();
         IOManager ioMan = new IOManager();
         taskMan = new TaskManager(ioMan, bookService);
     }

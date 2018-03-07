@@ -1,18 +1,18 @@
 package com.twu.biblioteca.Controllers;
 
 import com.twu.biblioteca.Models.Book;
-import com.twu.biblioteca.Repository.BookService;
+import com.twu.biblioteca.Repository.BookRepository;
 import org.junit.Test;
 import java.util.List;
 import static junit.framework.TestCase.assertEquals;
 
-public class BookServiceTest extends TestUtils {
+public class BookRepositoryTest extends TestUtils {
 
     @Test
     public void testGetBookList(){
         List<Book> expected = getBooks();
 
-        BookService man = new BookService();
+        BookRepository man = new BookRepository();
         List<Book> results = man.getBookList();
 
         assertEquals(expected.get(0), results.get(0));

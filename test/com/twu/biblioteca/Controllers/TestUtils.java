@@ -1,7 +1,7 @@
 package com.twu.biblioteca.Controllers;
 
 import com.twu.biblioteca.Models.Book;
-import com.twu.biblioteca.Repository.BookService;
+import com.twu.biblioteca.Repository.BookRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ public class TestUtils {
         return books;
     }
 
-    public void insertCheckedoutBook(BookService bs){
+    public void insertCheckedoutBook(BookRepository bs){
         Book book = new Book("Book", "Author", "1990");
         bs.addCheckedoutBook(book);
     }

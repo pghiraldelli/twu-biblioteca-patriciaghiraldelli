@@ -4,11 +4,11 @@ import com.twu.biblioteca.Models.Book;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookService {
+public class BookRepository {
     private List<Book> bookList;
     private List<Book> checkedOutBooks;
 
-    public BookService(){
+    public BookRepository(){
         this.bookList = createBookList();
         this.checkedOutBooks = new ArrayList<Book>();
     }
