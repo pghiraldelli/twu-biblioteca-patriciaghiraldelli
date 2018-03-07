@@ -1,5 +1,6 @@
 package com.twu.biblioteca.Controllers;
 
+import com.twu.biblioteca.Models.Task;
 import com.twu.biblioteca.Utils.MessageContainer;
 
 public class ConsoleManager extends TaskManager {
@@ -20,15 +21,15 @@ public class ConsoleManager extends TaskManager {
 
     protected boolean runTask(int option){
         switch (option){
-            case 0:
+            case Task.QUIT:
                 return false;
-            case 1:
+            case Task.BOOKDETAILS:
                 showBookList();
                 break;
-            case 2:
+            case Task.CHECKOUT:
                 runCheckout();
                 break;
-            case 3:
+            case Task.RETURN:
                 runReturnBook();
                 break;
             default:

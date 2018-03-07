@@ -1,5 +1,7 @@
 package com.twu.biblioteca.Utils;
 
+import com.twu.biblioteca.Models.Task;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -17,7 +19,7 @@ public class IOManager {
         } catch (Exception e) {
         }
 
-        return 100;
+        return Task.INVALIDOPTION;
     }
 
 }
