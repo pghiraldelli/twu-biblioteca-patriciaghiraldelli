@@ -1,10 +1,19 @@
 package com.twu.biblioteca.Controllers;
 
 import com.twu.biblioteca.Models.Task;
+import com.twu.biblioteca.Repository.BookService;
+import com.twu.biblioteca.Utils.IOManager;
 import com.twu.biblioteca.Utils.MessageContainer;
 
-public class ConsoleManager extends TaskManager {
+public class ConsoleManager {
     private boolean runningTasks = true;
+    private TaskManager taskMan;
+
+    public ConsoleManager() {
+        BookService bookService = new BookService();
+        IOManager ioMan = new IOManager();
+        taskMan = new TaskManager(ioMan, bookService);
+    }
 
     public void mainMenu(){
         showWelcomeMessage();
@@ -24,7 +33,7 @@ public class ConsoleManager extends TaskManager {
             case Task.QUIT:
                 return false;
             case Task.BOOKDETAILS:
-                showBookList();
+                taskMan.showBookList();
                 break;
             case Task.CHECKOUT:
                 runCheckout();
@@ -33,57 +42,57 @@ public class ConsoleManager extends TaskManager {
                 runReturnBook();
                 break;
             default:
-                invalidOptionMessage();
+                taskMan.invalidOptionMessage();
         }
         return true;
     }
 
     private int askForInt(String text){
         System.out.println(text);
-        return this.iom.readInt();
+        return taskMan.getIOManager().readInt();
     }
 
     private void showMenuOptions(){
-        this.iom.printString(MessageContainer.getMenuOptions());
+        taskMan.getIOManager().printString(MessageContainer.getMenuOptions());
     }
 
     private void showWelcomeMessage(){
-        this.iom.printString(MessageContainer.getWelcomeMessage());
+        taskMan.getIOManager().printString(MessageContainer.getWelcomeMessage());
     }
 
     private void runCheckout(){
-        this.iom.printString("\nEnter the number of the book to checkout: ");
-        int index = this.iom.readInt();
-        boolean success = checkoutBook(index);
+        taskMan.getIOManager().printString("\nEnter the number of the book to checkout: ");
+        int index = taskMan.getIOManager().readInt();
+        boolean success = taskMan.checkoutBook(index);
         showFinalMessageToCheckout(success);
     }
 
     private void showFinalMessageToCheckout(boolean success){
         if(success) {
-            this.iom.printString("\n::Success:: Thank you! Enjoy the book.\n");
+            taskMan.getIOManager().printString("\n::Success:: Thank you! Enjoy the book.\n");
             return;
         }
-        this.iom.printString("\n::Error:: That book is not available\n");
+        taskMan.getIOManager().printString("\n::Error:: That book is not available\n");
     }
 
     private void runReturnBook(){
-        if(getCheckedoutBookList().size() == 0){
-            this.iom.printString("\n::Attention:: There are no books to return. Choose another option.");
+        if(taskMan.getBookService().getCheckedoutBookList().size() == 0){
+            taskMan.getIOManager().printString("\n::Attention:: There are no books to return. Choose another option.");
             return;
         }
 
-        showCheckedBookList();
-        this.iom.printString("Enter the number of the book to return: ");
-        int index = this.iom.readInt();
-        boolean success = returnBook(index);
+        taskMan.showCheckedBookList();
+        taskMan.getIOManager().printString("Enter the number of the book to return: ");
+        int index = taskMan.getIOManager().readInt();
+        boolean success = taskMan.returnBook(index);
         showFinalMessageToReturn(success);
     }
 
     private void showFinalMessageToReturn(boolean success){
         if(success) {
-            this.iom.printString("\n::Success:: Thank you for returning the book.\n");
+            taskMan.getIOManager().printString("\n::Success:: Thank you for returning the book.\n");
             return;
         }
-        this.iom.printString("\n::Error:: That is not a valid book to return.\n");
+        taskMan.getIOManager().printString("\n::Error:: That is not a valid book to return.\n");
     }
 }

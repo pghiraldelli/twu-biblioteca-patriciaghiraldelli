@@ -1,23 +1,23 @@
-package com.twu.biblioteca.Controllers;
+package com.twu.biblioteca.Repository;
 
 import com.twu.biblioteca.Models.Book;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookManager {
+public class BookService {
     private List<Book> bookList;
     private List<Book> checkedOutBooks;
 
-    public BookManager(){
+    public BookService(){
         this.bookList = createBookList();
         this.checkedOutBooks = new ArrayList<Book>();
     }
 
-    protected List<Book> getBookList(){
+    public List<Book> getBookList(){
         return this.bookList;
     }
 
-    protected List<Book> getCheckedoutBookList(){
+    public List<Book> getCheckedoutBookList(){
         return this.checkedOutBooks;
     }
 
@@ -33,19 +33,19 @@ public class BookManager {
         return new Book(title, author, year);
     }
 
-    protected void removeBook(int index){
+    public void removeBook(int index){
         this.bookList.remove(index);
     }
 
-    protected void addBook(Book book){
+    public void addBook(Book book){
         this.bookList.add(book);
     }
 
-    protected void addCheckedoutBook(Book book){
+    public void addCheckedoutBook(Book book){
         this.checkedOutBooks.add(book);
     }
 
-    protected void removeCheckedoutBook(int index){
+    public void removeCheckedoutBook(int index){
         this.checkedOutBooks.remove(index);
     }
 }

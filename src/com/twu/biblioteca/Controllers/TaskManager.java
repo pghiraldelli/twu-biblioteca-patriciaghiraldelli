@@ -1,18 +1,25 @@
 package com.twu.biblioteca.Controllers;
 
 import com.twu.biblioteca.Models.Book;
+import com.twu.biblioteca.Repository.BookService;
 import com.twu.biblioteca.Utils.IOManager;
 import com.twu.biblioteca.Utils.MessageContainer;
 
-public class TaskManager extends BookManager{
-    protected IOManager iom = new IOManager();
+public class TaskManager{
+    private IOManager iom;
+    private BookService bs;
+
+    public TaskManager(IOManager iom, BookService bs) {
+        this.iom = iom;
+        this.bs = bs;
+    }
 
     protected void showBookList(){
-        this.iom.printString(MessageContainer.getBookDetails(this.getBookList(), "Book details"));
+        this.iom.printString(MessageContainer.getBookDetails(bs.getBookList(), "Book details"));
     }
 
     protected void showCheckedBookList(){
-        this.iom.printString(MessageContainer.getBookDetails(this.getCheckedoutBookList(), "Books to return"));
+        this.iom.printString(MessageContainer.getBookDetails(bs.getCheckedoutBookList(), "Books to return"));
     }
 
     protected void invalidOptionMessage(){
@@ -20,20 +27,28 @@ public class TaskManager extends BookManager{
     }
 
     protected boolean checkoutBook(int index){
-        if(index >= getBookList().size()) return false;
+        if(index >= bs.getBookList().size()) return false;
 
-        Book book = getBookList().get(index);
-        removeBook(index);
-        addCheckedoutBook(book);
+        Book book = bs.getBookList().get(index);
+        bs.removeBook(index);
+        bs.addCheckedoutBook(book);
         return true;
     }
 
     protected boolean returnBook(int index){
-        if(index >= getCheckedoutBookList().size()) return false;
+        if(index >= bs.getCheckedoutBookList().size()) return false;
 
-        Book book = getCheckedoutBookList().get(index);
-        removeCheckedoutBook(index);
-        addBook(book);
+        Book book = bs.getCheckedoutBookList().get(index);
+        bs.removeCheckedoutBook(index);
+        bs.addBook(book);
         return true;
+    }
+
+    public IOManager getIOManager() {
+        return iom;
+    }
+
+    public BookService getBookService() {
+        return bs;
     }
 }
