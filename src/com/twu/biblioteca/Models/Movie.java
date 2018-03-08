@@ -42,4 +42,9 @@ public class Movie {
                 Objects.equals(year, movie.year) &&
                 Objects.equals(director, movie.director);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, year, director, rate);
+    }
 }
