@@ -1,11 +1,11 @@
-package com.twu.biblioteca.Controllers;
+package Utils;
 
 import com.twu.biblioteca.Utils.MessageContainer;
 import org.junit.Test;
 import static junit.framework.TestCase.assertEquals;
 
 
-public class MessageContainerTest extends TestUtils{
+public class MessageContainerTest extends TestUtils {
 
     @Test
     public void testGetWelcomeMessage() {

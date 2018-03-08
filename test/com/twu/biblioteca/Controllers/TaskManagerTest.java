@@ -1,5 +1,6 @@
 package com.twu.biblioteca.Controllers;
 
+import Utils.TestUtils;
 import com.twu.biblioteca.Models.Book;
 import com.twu.biblioteca.Repository.BookRepository;
 import com.twu.biblioteca.Utils.IOManager;
@@ -8,7 +9,7 @@ import org.junit.Test;
 import java.util.List;
 import static junit.framework.TestCase.*;
 
-public class TaskManagerTest extends TestUtils{
+public class TaskManagerTest extends TestUtils {
 
     private IOManager iom;
     private BookRepository bs;
