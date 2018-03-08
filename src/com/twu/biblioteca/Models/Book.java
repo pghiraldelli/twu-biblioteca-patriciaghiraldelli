@@ -23,6 +23,7 @@ public class Book {
         return year;
     }
 
+    @Override
     public boolean equals(Object obj){
         if (this.getClass() != obj.getClass()) return false;
 
