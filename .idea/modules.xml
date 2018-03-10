@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/twu-biblioteca-patriciaghiraldelli.iml" filepath="$PROJECT_DIR$/.idea/twu-biblioteca-patriciaghiraldelli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/twu-biblioteca-patriciaghiraldelli.iml" filepath="$PROJECT_DIR$/twu-biblioteca-patriciaghiraldelli.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/twu-biblioteca-patriciaghiraldelli_main.iml" filepath="$PROJECT_DIR$/.idea/modules/twu-biblioteca-patriciaghiraldelli_main.iml" group="twu-biblioteca-patriciaghiraldelli" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/twu-biblioteca-patriciaghiraldelli_test.iml" filepath="$PROJECT_DIR$/.idea/modules/twu-biblioteca-patriciaghiraldelli_test.iml" group="twu-biblioteca-patriciaghiraldelli" />
     </modules>
