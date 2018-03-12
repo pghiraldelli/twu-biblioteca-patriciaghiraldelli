@@ -3,6 +3,7 @@ package com.twu.biblioteca.Controllers;
 import Utils.TestUtils;
 import com.twu.biblioteca.Models.Book;
 import com.twu.biblioteca.Repository.BookRepository;
+import com.twu.biblioteca.Repository.MovieRepository;
 import com.twu.biblioteca.Utils.IOManager;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,14 +14,16 @@ import static junit.framework.TestCase.*;
 public class TaskManagerTest extends TestUtils {
 
     private IOManager iom;
-    private BookRepository bs;
+    private BookRepository br;
     private TaskManager tm;
+    private MovieRepository mr;
 
     @Before
     public void setUp() throws Exception {
         iom = new IOManager();
-        bs = new BookRepository();
-        tm = new TaskManager(iom, bs);
+        br = new BookRepository();
+        mr = new MovieRepository();
+        tm = new TaskManager(iom, br, mr);
     }
 
     @Test

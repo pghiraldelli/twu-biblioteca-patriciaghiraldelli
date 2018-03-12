@@ -23,6 +23,12 @@ public class MessageContainer {
         return bookList;
     }
 
+    public static String getMovieDetails(List<Movie> movies, String title){
+        String movieList = getActionTitle(title);
+        movieList += getMovieGrid(movies);
+        return movieList;
+    }
+
     private static String getActionTitle(String title){
         String str = "\n--------------------------------\n";
         str +=  centralizeString("***  "+title+"  ***", MESSAGE_SIZE)+"\n";
@@ -39,11 +45,21 @@ public class MessageContainer {
         return str;
     }
 
+    private static String getMovieGrid(List<Movie> movies){
+        String str = "";
+        for (int i = 0; i < movies.size() ; i++) {
+            Movie movie = movies.get(i);
+            str += "| "+i+" | "+movie.getName()+" | "+movie.getYear()+" | "+movie.getDirector()+" | "+movie.getRate()+" |\n";
+        }
+        return str;
+    }
+
     private static String getMenuGrid(){
         String str =        "|    0- Quit                |\n";
         str +=              "|    1- Book details        |\n";
         str +=              "|    2- Checkout book       |\n";
         str +=              "|    3- Return book         |\n";
+        str +=              "|    4- Movie details       |\n";
         return str;
     }
 

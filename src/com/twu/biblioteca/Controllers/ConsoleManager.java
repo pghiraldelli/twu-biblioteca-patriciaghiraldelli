@@ -2,6 +2,7 @@ package com.twu.biblioteca.Controllers;
 
 import com.twu.biblioteca.Models.Task;
 import com.twu.biblioteca.Repository.BookRepository;
+import com.twu.biblioteca.Repository.MovieRepository;
 import com.twu.biblioteca.Utils.IOManager;
 import com.twu.biblioteca.Utils.MessageContainer;
 
@@ -10,9 +11,10 @@ public class ConsoleManager {
     private TaskManager taskMan;
 
     public ConsoleManager() {
-        BookRepository bookService = new BookRepository();
+        BookRepository bookRepository = new BookRepository();
         IOManager ioMan = new IOManager();
-        taskMan = new TaskManager(ioMan, bookService);
+        MovieRepository movieRepository = new MovieRepository();
+        taskMan = new TaskManager(ioMan, bookRepository, movieRepository);
     }
 
     public void mainMenu(){
@@ -35,11 +37,14 @@ public class ConsoleManager {
             case Task.BOOKDETAILS:
                 taskMan.showBookList();
                 break;
-            case Task.CHECKOUT:
+            case Task.CHECKOUTBOOK:
                 runCheckout();
                 break;
-            case Task.RETURN:
+            case Task.RETURNBOOK:
                 runReturnBook();
+                break;
+            case Task.MOVIEDETAILS:
+                taskMan.showMovieList();
                 break;
             default:
                 taskMan.invalidOptionMessage();
