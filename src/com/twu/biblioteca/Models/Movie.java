@@ -6,13 +6,19 @@ public class Movie {
     private String name;
     private String year;
     private String director;
-    private int rate;
+    private int rate = 0;
 
     public Movie(String name, String year, String director, int rate) {
         this.name = name;
         this.year = year;
         this.director = director;
         this.rate = rate;
+    }
+
+    public Movie(String name, String year, String director) {
+        this.name = name;
+        this.year = year;
+        this.director = director;
     }
 
 

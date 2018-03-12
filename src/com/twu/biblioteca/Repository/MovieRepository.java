@@ -16,7 +16,7 @@ public class MovieRepository {
     public List<Movie> createMovieList(){
         List<Movie> movies = new ArrayList<Movie>();
         movies.add(createMovie("Movie 1", "2010", "Director 1", 3));
-        movies.add(createMovie("Movie 2", "2018", "Director 2", 1));
+        movies.add(createMovie("Movie 2", "2018", "Director 2"));
         movies.add(createMovie("Movie 3", "1850", "Director 3", 5));
         movies.add(createMovie("Movie 4", "1900", "Director 4", 10));
         movies.add(createMovie("Movie 5", "2000", "Director 5", 7));
@@ -25,6 +25,10 @@ public class MovieRepository {
 
     public Movie createMovie(String name, String year, String director, int rate){
         return new Movie(name, year, director, rate);
+    }
+
+    public Movie createMovie(String name, String year, String director){
+        return new Movie(name, year, director);
     }
 
     public List<Movie> getMovieList() {

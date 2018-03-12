@@ -49,9 +49,14 @@ public class MessageContainer {
         String str = "";
         for (int i = 0; i < movies.size() ; i++) {
             Movie movie = movies.get(i);
-            str += "| "+i+" | "+movie.getName()+" | "+movie.getYear()+" | "+movie.getDirector()+" | "+movie.getRate()+" |\n";
+            str += "| "+i+" | "+movie.getName()+" | "+movie.getYear()+" | "+movie.getDirector()+" | "+getMovieRate(movie.getRate())+" |\n";
         }
         return str;
+    }
+
+    private static String getMovieRate(int rate){
+        if(rate == 0) return "unrated";
+        return rate+"";
     }
 
     private static String getMenuGrid(){
