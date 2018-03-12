@@ -24,7 +24,7 @@ public class TaskManagerTest extends TestUtils {
     }
 
     @Test
-    public void testCheckoutBook_existingBook_shouldRemoveBook(){
+    public void shouldRemoveBookFromCheckoutList(){
         int indexToRemove = 0;
 
         Book bookToCheckout = tm.getBookService().getBookList().get(indexToRemove);
@@ -35,7 +35,7 @@ public class TaskManagerTest extends TestUtils {
     }
 
     @Test
-    public void testCheckoutBook_nonExistingBook_shouldKeepBookList(){
+    public void shouldKeepBookInCheckoutList(){
         int indexToRemove = 100;
 
         List<Book> booksBefore = tm.getBookService().getBookList();
@@ -48,7 +48,7 @@ public class TaskManagerTest extends TestUtils {
     }
 
     @Test
-    public void testReturnBook_existingBook_shouldRemoveBook(){
+    public void shouldRemoveBookFromReturnList(){
         int indexToRemove = 0;
         insertCheckedoutBook(tm.getBookService());
 
@@ -60,7 +60,7 @@ public class TaskManagerTest extends TestUtils {
     }
 
     @Test
-    public void testReturnBook_nonExistingBook_shouldKeepBookList(){
+    public void shouldKeepBookListWithInvalidBook(){
         int indexToRemove = 100;
         insertCheckedoutBook(tm.getBookService());
 

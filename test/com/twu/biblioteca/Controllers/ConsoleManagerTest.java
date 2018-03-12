@@ -1,25 +1,33 @@
 package com.twu.biblioteca.Controllers;
 
 import com.twu.biblioteca.Models.Task;
+import org.junit.Before;
 import org.junit.Test;
+
+import java.io.Console;
+
 import static junit.framework.TestCase.*;
 
 public class ConsoleManagerTest {
+    private ConsoleManager cm;
+
+    @Before
+    public void setUp() throws Exception {
+        cm = new ConsoleManager();
+    }
+
     @Test
-    public void testRunTask_OptionZero_shouldExitMenu(){
-        ConsoleManager cm = new ConsoleManager();
+    public void shouldExitMenu(){
         assertFalse(cm.runTask(Task.QUIT));
     }
 
     @Test
-    public void testRunTask_Option1_shouldStayInMenu(){
-        ConsoleManager cm = new ConsoleManager();
+    public void shouldStayInMenuWithValidOption(){
         assertTrue(cm.runTask(Task.BOOKDETAILS));
     }
 
     @Test
-    public void testRunTask_Option100_shouldStayInMenu(){
-        ConsoleManager cm = new ConsoleManager();
+    public void shouldStayInMenuWithInvalid(){
         assertTrue(cm.runTask(Task.INVALIDOPTION));
     }
 }

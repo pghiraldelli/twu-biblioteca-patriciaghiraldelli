@@ -1,6 +1,7 @@
 package Utils;
 
 import com.twu.biblioteca.Utils.MessageContainer;
+import org.junit.Before;
 import org.junit.Test;
 import static junit.framework.TestCase.assertEquals;
 
@@ -8,17 +9,14 @@ import static junit.framework.TestCase.assertEquals;
 public class MessageContainerTest extends TestUtils {
 
     @Test
-    public void testGetWelcomeMessage() {
-        MessageContainer container = new MessageContainer();
-        String msg = container.getWelcomeMessage();
+    public void shouldGetWelcomeMessage() {
+        String msg = MessageContainer.getWelcomeMessage();
 
         assertEquals("~~~~ Welcome to Biblioteca! ~~~~", msg);
     }
 
     @Test
-    public void testGetBookList(){
-        MessageContainer container = new MessageContainer();
-
+    public void shouldGetBookList(){
         String expected = "\n--------------------------------\n";
         expected +=       "     ***  Book Details  ***     \n";
         expected +=       "--------------------------------\n";
@@ -26,12 +24,12 @@ public class MessageContainerTest extends TestUtils {
         expected += "| 1 | Book 2 | Author 2 | 2018 |\n";
         expected += "| 2 | Book 3 | Author 3 | 2000 |\n";
 
-        String result = container.getBookDetails(getBooks(), "Book Details");
+        String result = MessageContainer.getBookDetails(getBooks(), "Book Details");
         assertEquals(expected, result);
     }
 
     @Test
-    public void testGetMenuOptions() {
+    public void shouldGetMenuOptions() {
         String expected = "\n--------------------------------\n";
         expected += "         ***  Menu  ***         \n";
         expected += "--------------------------------\n";
