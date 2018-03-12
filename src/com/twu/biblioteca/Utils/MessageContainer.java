@@ -17,13 +17,13 @@ public class MessageContainer {
         return menu;
     }
 
-    public static String getBookDetails(List<Book> books, String title){
+    public static String getBookDetails(List<Item> books, String title){
         String bookList = getActionTitle(title);
         bookList += getBookGrid(books);
         return bookList;
     }
 
-    public static String getMovieDetails(List<Movie> movies, String title){
+    public static String getMovieDetails(List<Item> movies, String title){
         String movieList = getActionTitle(title);
         movieList += getMovieGrid(movies);
         return movieList;
@@ -36,19 +36,19 @@ public class MessageContainer {
         return str;
     }
 
-    private static String getBookGrid(List<Book> books){
+    private static String getBookGrid(List<Item> books){
         String str = "";
         for (int i = 0; i < books.size() ; i++) {
-            Book book = books.get(i);
+            Book book = (Book) books.get(i);
             str +="| "+i+" | "+book.getTitle()+" | "+book.getAuthor()+" | "+book.getYear()+" |\n";
         }
         return str;
     }
 
-    private static String getMovieGrid(List<Movie> movies){
+    private static String getMovieGrid(List<Item> movies){
         String str = "";
         for (int i = 0; i < movies.size() ; i++) {
-            Movie movie = movies.get(i);
+            Movie movie = (Movie)movies.get(i);
             str += "| "+i+" | "+movie.getName()+" | "+movie.getYear()+" | "+movie.getDirector()+" | "+getMovieRate(movie.getRate())+" |\n";
         }
         return str;

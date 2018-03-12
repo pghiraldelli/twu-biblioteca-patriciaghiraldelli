@@ -38,7 +38,7 @@ public class ConsoleManager {
                 taskMan.showBookList();
                 break;
             case Task.CHECKOUTBOOK:
-                runCheckout();
+                runBookCheckout();
                 break;
             case Task.RETURNBOOK:
                 runReturnBook();
@@ -53,7 +53,7 @@ public class ConsoleManager {
     }
 
     private int askForInt(String text){
-        System.out.println(text);
+        taskMan.getIOManager().printString(text);
         return taskMan.getIOManager().readInt();
     }
 
@@ -65,14 +65,19 @@ public class ConsoleManager {
         taskMan.getIOManager().printString(MessageContainer.getWelcomeMessage());
     }
 
-    private void runCheckout(){
-        taskMan.getIOManager().printString("\nEnter the number of the book to checkout: ");
-        int index = taskMan.getIOManager().readInt();
+    private void runBookCheckout(){
+        int index = askForInt("\nEnter the number of the book to checkout: ");
         boolean success = taskMan.checkoutBook(index);
-        showFinalMessageToCheckout(success);
+        showFinalMessageToBookCheckout(success);
     }
 
-    private void showFinalMessageToCheckout(boolean success){
+    private void runMovieCheckout(){
+        int index = askForInt("\nEnter the number of the movie to checkout: ");
+        boolean success = taskMan.checkoutMovie(index);
+        showFinalMessageToMovieCheckout(success);
+    }
+
+    private void showFinalMessageToBookCheckout(boolean success){
         if(success) {
             taskMan.getIOManager().printString("\n::Success:: Thank you! Enjoy the book.\n");
             return;
@@ -80,15 +85,22 @@ public class ConsoleManager {
         taskMan.getIOManager().printString("\n::Error:: That book is not available\n");
     }
 
+    private void showFinalMessageToMovieCheckout(boolean success){
+        if(success) {
+            taskMan.getIOManager().printString("\n::Success:: Thank you! Enjoy the movie.\n");
+            return;
+        }
+        taskMan.getIOManager().printString("\n::Error:: That movie is not available\n");
+    }
+
     private void runReturnBook(){
-        if(taskMan.getBookService().getCheckedoutBookList().size() == 0){
+        if(taskMan.getBookRepository().getCheckedoutBookList().size() == 0){
             taskMan.getIOManager().printString("\n::Attention:: There are no books to return. Choose another option.");
             return;
         }
 
         taskMan.showCheckedBookList();
-        taskMan.getIOManager().printString("Enter the number of the book to return: ");
-        int index = taskMan.getIOManager().readInt();
+        int index = askForInt("Enter the number of the book to return: ");
         boolean success = taskMan.returnBook(index);
         showFinalMessageToReturn(success);
     }

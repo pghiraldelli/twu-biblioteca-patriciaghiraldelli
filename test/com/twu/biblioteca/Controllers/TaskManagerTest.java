@@ -2,6 +2,8 @@ package com.twu.biblioteca.Controllers;
 
 import Utils.TestUtils;
 import com.twu.biblioteca.Models.Book;
+import com.twu.biblioteca.Models.Item;
+import com.twu.biblioteca.Models.Movie;
 import com.twu.biblioteca.Repository.BookRepository;
 import com.twu.biblioteca.Repository.MovieRepository;
 import com.twu.biblioteca.Utils.IOManager;
@@ -30,48 +32,72 @@ public class TaskManagerTest extends TestUtils {
     public void shouldRemoveBookFromCheckoutList(){
         int indexToRemove = 0;
 
-        Book bookToCheckout = tm.getBookService().getBookList().get(indexToRemove);
+        Book bookToCheckout = (Book)tm.getBookRepository().getBookList().get(indexToRemove);
 
         tm.checkoutBook(indexToRemove);
 
-        assertFalse(tm.getBookService().getBookList().get(indexToRemove).equals(bookToCheckout));
+        assertFalse(tm.getBookRepository().getBookList().get(indexToRemove).equals(bookToCheckout));
     }
 
     @Test
     public void shouldKeepBookInCheckoutList(){
         int indexToRemove = 100;
 
-        List<Book> booksBefore = tm.getBookService().getBookList();
+        List<Item> booksBefore = tm.getBookRepository().getBookList();
         tm.checkoutBook(indexToRemove);
 
-        assertEquals(tm.getBookService().getBookList().get(0), booksBefore.get(0));
-        assertEquals(tm.getBookService().getBookList().get(2), booksBefore.get(2));
+        assertEquals(tm.getBookRepository().getBookList().get(0), booksBefore.get(0));
+        assertEquals(tm.getBookRepository().getBookList().get(2), booksBefore.get(2));
 
-        assertEquals(0, tm.getBookService().getCheckedoutBookList().size());
+        assertEquals(0, tm.getBookRepository().getCheckedoutBookList().size());
     }
 
     @Test
     public void shouldRemoveBookFromReturnList(){
         int indexToRemove = 0;
-        insertCheckedoutBook(tm.getBookService());
+        insertCheckedoutBook(tm.getBookRepository());
 
-        Book bookCheckedout = tm.getBookService().getCheckedoutBookList().get(indexToRemove);
+        Book bookCheckedout = (Book)tm.getBookRepository().getCheckedoutBookList().get(indexToRemove);
 
         tm.returnBook(indexToRemove);
 
-        assertTrue(tm.getBookService().getCheckedoutBookList().size() == 0);
+        assertTrue(tm.getBookRepository().getCheckedoutBookList().size() == 0);
     }
 
     @Test
     public void shouldKeepBookListWithInvalidBook(){
         int indexToRemove = 100;
-        insertCheckedoutBook(tm.getBookService());
+        insertCheckedoutBook(tm.getBookRepository());
 
-        List<Book> booksBefore = tm.getBookService().getCheckedoutBookList();
+        List<Item> booksBefore = tm.getBookRepository().getCheckedoutBookList();
         tm.returnBook(indexToRemove);
 
-        assertEquals(tm.getBookService().getCheckedoutBookList().get(0), booksBefore.get(0));
+        assertEquals(tm.getBookRepository().getCheckedoutBookList().get(0), booksBefore.get(0));
 
-        assertEquals(3, tm.getBookService().getBookList().size());
+        assertEquals(3, tm.getBookRepository().getBookList().size());
+    }
+
+    @Test
+    public void shouldRemoveMovieFromCheckoutList(){
+        int indexToRemove = 0;
+
+        Movie movieToCheckout = (Movie) tm.getMovieRepository().getMovieList().get(indexToRemove);
+
+        tm.checkoutMovie(indexToRemove);
+
+        assertFalse(tm.getMovieRepository().getMovieList().get(indexToRemove).equals(movieToCheckout));
+    }
+
+    @Test
+    public void shouldKeepMovieInCheckoutList(){
+        int indexToRemove = 100;
+
+        List<Item> moviesBefore = tm.getMovieRepository().getMovieList();
+        tm.checkoutMovie(indexToRemove);
+
+        assertEquals(tm.getMovieRepository().getMovieList().get(0), moviesBefore.get(0));
+        assertEquals(tm.getMovieRepository().getMovieList().get(2), moviesBefore.get(2));
+
+        assertEquals(0, tm.getBookRepository().getCheckedoutBookList().size());
     }
 }

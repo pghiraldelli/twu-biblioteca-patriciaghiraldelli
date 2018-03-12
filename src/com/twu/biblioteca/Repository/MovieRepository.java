@@ -1,20 +1,19 @@
 package com.twu.biblioteca.Repository;
 
+import com.twu.biblioteca.Models.Item;
 import com.twu.biblioteca.Models.Movie;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MovieRepository {
-
-    private List<Movie> movieList;
-
+public class MovieRepository extends ItemRepository{
     public MovieRepository() {
-        this.movieList = createMovieList();
+        this.itemList = createMovieList();
+        this.checkedoutItems = new ArrayList<Item>();
     }
 
-    public List<Movie> createMovieList(){
-        List<Movie> movies = new ArrayList<Movie>();
+    public List<Item> createMovieList(){
+        List<Item> movies = new ArrayList<Item>();
         movies.add(createMovie("Movie 1", "2010", "Director 1", 3));
         movies.add(createMovie("Movie 2", "2018", "Director 2"));
         movies.add(createMovie("Movie 3", "1850", "Director 3", 5));
@@ -31,7 +30,15 @@ public class MovieRepository {
         return new Movie(name, year, director);
     }
 
-    public List<Movie> getMovieList() {
-        return movieList;
+    public void addCheckedoutMovie(Movie movie){
+        this.checkedoutItems.add(movie);
+    }
+
+    public void removeMovie(int index){
+        this.itemList.remove(index);
+    }
+
+    public List<Item> getMovieList() {
+        return itemList;
     }
 }

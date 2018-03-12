@@ -1,28 +1,30 @@
 package com.twu.biblioteca.Repository;
 
 import com.twu.biblioteca.Models.Book;
+import com.twu.biblioteca.Models.Item;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class BookRepository {
-    private List<Book> bookList;
-    private List<Book> checkedOutBooks;
+    private List<Item> bookList;
+    private List<Item> checkedOutBooks;
 
     public BookRepository(){
         this.bookList = createBookList();
-        this.checkedOutBooks = new ArrayList<Book>();
+        this.checkedOutBooks = new ArrayList<Item>();
     }
 
-    public List<Book> getBookList(){
+    public List<Item> getBookList(){
         return this.bookList;
     }
 
-    public List<Book> getCheckedoutBookList(){
+    public List<Item> getCheckedoutBookList(){
         return this.checkedOutBooks;
     }
 
-    private List<Book> createBookList(){
-        List<Book> books = new ArrayList<Book>();
+    private List<Item> createBookList(){
+        List<Item> books = new ArrayList<Item>();
         books.add(createBook("Book 1", "Author 1", "1994"));
         books.add(createBook("Book 2", "Author 2", "2018"));
         books.add(createBook("Book 3", "Author 3", "2000"));

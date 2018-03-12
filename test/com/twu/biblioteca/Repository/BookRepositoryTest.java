@@ -2,6 +2,7 @@ package com.twu.biblioteca.Repository;
 
 import Utils.TestUtils;
 import com.twu.biblioteca.Models.Book;
+import com.twu.biblioteca.Models.Item;
 import com.twu.biblioteca.Repository.BookRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,8 +19,8 @@ public class BookRepositoryTest extends TestUtils {
 
     @Test
     public void shouldGetBookList(){
-        List<Book> expected = getBooks();
-        List<Book> results = br.getBookList();
+        List<Item> expected = getBooks();
+        List<Item> results = br.getBookList();
 
         assertEquals(expected.get(0), results.get(0));
         assertEquals(expected.get(1), results.get(1));

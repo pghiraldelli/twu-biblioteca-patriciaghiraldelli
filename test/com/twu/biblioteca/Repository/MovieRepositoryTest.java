@@ -1,6 +1,7 @@
 package com.twu.biblioteca.Repository;
 
 import Utils.TestUtils;
+import com.twu.biblioteca.Models.Item;
 import com.twu.biblioteca.Models.Movie;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +20,7 @@ public class MovieRepositoryTest extends TestUtils{
 
     @Test
     public void shouldReturnMovieList() {
-        List<Movie> expectedMovies = getMovies();
+        List<Item> expectedMovies = getMovies();
 
         assertEquals(mr.getMovieList().get(0), expectedMovies.get(0));
         assertEquals(mr.getMovieList().get(1), expectedMovies.get(1));
