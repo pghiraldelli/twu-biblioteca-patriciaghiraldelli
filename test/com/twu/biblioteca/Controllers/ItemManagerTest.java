@@ -14,16 +14,14 @@ import java.util.List;
 
 import static junit.framework.TestCase.*;
 
-public class TaskManagerTest extends TestUtils {
+public class ItemManagerTest extends TestUtils {
 
-    private IOManager iom;
     private BookRepository br;
     private ItemManager im;
     private MovieRepository mr;
 
     @Before
     public void setUp() throws Exception {
-        iom = new IOManager();
         br = new BookRepository();
         mr = new MovieRepository();
         im = new ItemManager(br, mr);
@@ -58,7 +56,7 @@ public class TaskManagerTest extends TestUtils {
         int indexToRemove = 0;
         insertCheckedoutBook(im.getBookRepository());
 
-        Book bookCheckedout = (Book) im.getBookRepository().getCheckedoutItemList().get(indexToRemove);
+        assertTrue(im.getBookRepository().getCheckedoutItemList().size() == 1);
 
         im.returnItem(ItemType.BOOK, indexToRemove);
 

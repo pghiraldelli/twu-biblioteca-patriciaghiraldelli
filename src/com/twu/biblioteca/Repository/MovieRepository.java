@@ -59,8 +59,4 @@ public class MovieRepository implements ItemRepositoryInterface {
     public Movie createMovie(String name, String year, String director, int rate){
         return new Movie(name, year, director, rate);
     }
-
-    public Movie createMovie(String name, String year, String director){
-        return new Movie(name, year, director);
-    }
 }

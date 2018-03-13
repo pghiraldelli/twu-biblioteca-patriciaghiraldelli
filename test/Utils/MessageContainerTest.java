@@ -9,14 +9,7 @@ import static junit.framework.TestCase.assertEquals;
 public class MessageContainerTest extends TestUtils {
 
     @Test
-    public void shouldGetWelcomeMessage() {
-        String msg = MessageContainer.WELCOME_MESSAGE;
-
-        assertEquals("~~~~ Welcome to Biblioteca! ~~~~", msg);
-    }
-
-    @Test
-    public void shouldGetBookList(){
+    public void shouldGetBookDetails(){
         String expected = "\n--------------------------------\n";
         expected +=       "     ***  Book Details  ***     \n";
         expected +=       "--------------------------------\n";
