@@ -12,8 +12,8 @@ public class ConsoleManager {
     private IOManager ioMan;
 
     public ConsoleManager() {
-        BookRepository bookRepository = new BookRepository();
         ioMan = new IOManager();
+        BookRepository bookRepository = new BookRepository();
         MovieRepository movieRepository = new MovieRepository();
         taskMan = new TaskManager(bookRepository, movieRepository);
     }
@@ -23,11 +23,12 @@ public class ConsoleManager {
         while(runningTasks){
             runningTasks = runMenu();
         }
+        showGoodbyeMessage();
     }
 
     private boolean runMenu(){
         showMenuOptions();
-        int option = askForInt("Choose the menu option:");
+        int option = askForInt(MessageContainer.MSG_MENU_OPTION);
         return runTask(option);
     }
 
@@ -58,12 +59,12 @@ public class ConsoleManager {
     }
 
     private void showWelcomeMessage(){
-        this.ioMan.printString(MessageContainer.getWelcomeMessage());
+        this.ioMan.printString(MessageContainer.WELCOME_MESSAGE);
     }
 
     private void showBookList(){
         if(!taskMan.hasAvailableBooks()){
-            this.ioMan.printString("\n::Attention:: There are no available books. Choose another option.");
+            this.ioMan.printString(MessageContainer.getNoAvaibleItemsMsg("books"));
             return;
         }
 
@@ -72,7 +73,7 @@ public class ConsoleManager {
 
     private void showMovieList(){
         if(!taskMan.hasAvailableMovies()){
-            this.ioMan.printString("\n::Attention:: There are no available movies. Choose another option.");
+            this.ioMan.printString(MessageContainer.getNoAvaibleItemsMsg("movies"));
             return;
         }
 
@@ -80,59 +81,63 @@ public class ConsoleManager {
     }
 
     private void runBookCheckout(){
-        int index = askForInt("\nEnter the number of the book to checkout: ");
+        int index = askForInt(MessageContainer.getNumberItemMsg("book", "checkout"));
         boolean success = taskMan.checkoutBook(index);
         showFinalMessageToBookCheckout(success);
     }
 
     private void runMovieCheckout(){
-        int index = askForInt("\nEnter the number of the movie to checkout: ");
+        int index = askForInt(MessageContainer.getNumberItemMsg("movie", "checkout"));
         boolean success = taskMan.checkoutMovie(index);
         showFinalMessageToMovieCheckout(success);
     }
 
     private void runReturnBook(){
         if(!taskMan.hasBookToReturn()){
-            this.ioMan.printString("\n::Attention:: There are no books to return. Choose another option.");
+            this.ioMan.printString(MessageContainer.getNoItemsReturnMsg("books"));
             return;
         }
 
         this.ioMan.printString(taskMan.getCheckedBookList());
-        int index = askForInt("Enter the number of the book to return: ");
+        int index = askForInt(MessageContainer.getNumberItemMsg("book", "return"));
         boolean success = taskMan.returnBook(index);
         showFinalMessageToReturn(success);
     }
 
     private void showFinalMessageToBookCheckout(boolean success){
         if(success) {
-            this.ioMan.printString("\n::Success:: Thank you! Enjoy the book.\n");
+            this.ioMan.printString(MessageContainer.getSuccessEnjoyMsg("book"));
             return;
         }
-        this.ioMan.printString("\n::Error:: That book is not available\n");
+        this.ioMan.printString(MessageContainer.getInvalidItemMsg("book", "checkout"));
     }
 
     private void showFinalMessageToMovieCheckout(boolean success){
         if(success) {
-            this.ioMan.printString("\n::Success:: Thank you! Enjoy the movie.\n");
+            this.ioMan.printString(MessageContainer.getSuccessEnjoyMsg("movie"));
             return;
         }
-        this.ioMan.printString("\n::Error:: That movie is not available\n");
+        this.ioMan.printString(MessageContainer.getInvalidItemMsg("movie", "checkout"));
     }
 
     private void showFinalMessageToReturn(boolean success){
         if(success) {
-            this.ioMan.printString("\n::Success:: Thank you for returning the book.\n");
+            this.ioMan.printString(MessageContainer.getSuccessReturnMsg("book"));
             return;
         }
-        this.ioMan.printString("\n::Error:: That is not a valid book to return.\n");
+        this.ioMan.printString(MessageContainer.getInvalidItemMsg("book","return"));
     }
 
     private void showInvalidOptionMessage(){
-        this.ioMan.printString("\n::Error:: Select a valid option!");
+        this.ioMan.printString(MessageContainer.MSG_INVALID_OPTION);
     }
 
     private int askForInt(String text){
         this.ioMan.printString(text);
         return this.ioMan.readInt();
+    }
+
+    private void showGoodbyeMessage(){
+        this.ioMan.printString(MessageContainer.GOODBYE_MESSAGE);
     }
 }

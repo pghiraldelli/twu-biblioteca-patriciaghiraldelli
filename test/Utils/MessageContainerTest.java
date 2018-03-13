@@ -10,7 +10,7 @@ public class MessageContainerTest extends TestUtils {
 
     @Test
     public void shouldGetWelcomeMessage() {
-        String msg = MessageContainer.getWelcomeMessage();
+        String msg = MessageContainer.WELCOME_MESSAGE;
 
         assertEquals("~~~~ Welcome to Biblioteca! ~~~~", msg);
     }

@@ -6,10 +6,10 @@ import java.util.List;
 public class MessageContainer {
 
     private static int MESSAGE_SIZE = 32;
-
-    public static String getWelcomeMessage(){
-        return "~~~~ Welcome to Biblioteca! ~~~~";
-    }
+    public static final String MSG_MENU_OPTION = "Choose the menu option:";
+    public static final String MSG_INVALID_OPTION = "\n::Error:: Select a valid option!";
+    public static final String WELCOME_MESSAGE = "~~~~ Welcome to Biblioteca! ~~~~";
+    public static final String GOODBYE_MESSAGE = "~~~~ Thank you for using Biblioteca! Bye Bye! ~~~~";
 
     public static String getMenuOptions(){
         String menu = getActionTitle("Menu");
@@ -66,6 +66,30 @@ public class MessageContainer {
         str +=              "|    3- Return book         |\n";
         str +=              "|    4- Movie details       |\n";
         return str;
+    }
+
+    public static String getNoAvaibleItemsMsg(String itemName){
+        return "\n::Attention:: There are no available "+itemName+". Choose another option.";
+    }
+
+    public static String getNumberItemMsg(String itemName, String action){
+        return "\nEnter the number of the "+itemName+" to "+action+": ";
+    }
+
+    public static String getNoItemsReturnMsg(String itemName){
+        return "\n::Attention:: There are no "+itemName+" to return. Choose another option.";
+    }
+
+    public static String getSuccessEnjoyMsg(String itemName){
+        return "\n::Success:: Thank you! Enjoy the "+itemName+".\n";
+    }
+
+    public static String getInvalidItemMsg(String itemName, String action){
+        return "\n::Error:: That is not a valid "+itemName+" to "+action+"\n";
+    }
+
+    public static String getSuccessReturnMsg(String itemName){
+        return "\n::Success:: Thank you for returning the "+itemName+".\n";
     }
 
     private static String centralizeString(String str, int size){
