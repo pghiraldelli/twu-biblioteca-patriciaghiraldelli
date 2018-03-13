@@ -51,6 +51,9 @@ public class ConsoleManager {
             case Task.CHECKOUTMOVIE:
                 runMovieCheckout();
                 break;
+            case Task.RETURNMOVIE:
+                runReturnMovie();
+                break;
             default:
                 showInvalidOptionMessage();
         }
@@ -104,6 +107,18 @@ public class ConsoleManager {
         this.ioMan.printString(taskMan.getCheckedBookList());
         int index = askForInt(MessageContainer.getNumberItemMsg("book", "return"));
         boolean success = taskMan.returnBook(index);
+        showFinalMessageToReturn(success);
+    }
+
+    private void runReturnMovie(){
+        if(!taskMan.hasMovieToReturn()){
+            this.ioMan.printString(MessageContainer.getNoItemsReturnMsg("movies"));
+            return;
+        }
+
+        this.ioMan.printString(taskMan.getCheckedMovieList());
+        int index = askForInt(MessageContainer.getNumberItemMsg("movie", "return"));
+        boolean success = taskMan.returnMovie(index);
         showFinalMessageToReturn(success);
     }
 

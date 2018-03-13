@@ -7,6 +7,6 @@ public class Task {
     public static final int RETURNBOOK = 3;
     public static final int MOVIEDETAILS = 4;
     public static final int CHECKOUTMOVIE = 5;
-    public static final int RETURNMOVIE = 5;
+    public static final int RETURNMOVIE = 6;
     public static final int INVALIDOPTION = 100;
 }

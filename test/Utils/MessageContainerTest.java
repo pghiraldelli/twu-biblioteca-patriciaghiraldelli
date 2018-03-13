@@ -32,6 +32,8 @@ public class MessageContainerTest extends TestUtils {
         expected += "|    2- Checkout book       |\n";
         expected += "|    3- Return book         |\n";
         expected += "|    4- Movie details       |\n";
+        expected +=              "|    5- Checkout movie      |\n";
+        expected +=              "|    6- Return movie        |\n";
 
         assertEquals(expected, MessageContainer.getMenuOptions());
     }

@@ -65,6 +65,8 @@ public class MessageContainer {
         str +=              "|    2- Checkout book       |\n";
         str +=              "|    3- Return book         |\n";
         str +=              "|    4- Movie details       |\n";
+        str +=              "|    5- Checkout movie      |\n";
+        str +=              "|    6- Return movie        |\n";
         return str;
     }
 

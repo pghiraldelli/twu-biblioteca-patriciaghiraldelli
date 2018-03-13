@@ -23,6 +23,10 @@ public class TaskManager{
         return itemManager.getCheckedoutItemList(ItemType.BOOK);
     }
 
+    public String getCheckedMovieList(){
+        return itemManager.getCheckedoutItemList(ItemType.MOVIE);
+    }
+
     public boolean checkoutBook(int index){
         return itemManager.checkoutItem(ItemType.BOOK, index);
     }
@@ -35,8 +39,16 @@ public class TaskManager{
         return itemManager.returnItem(ItemType.BOOK, index);
     }
 
+    public boolean returnMovie(int index){
+        return itemManager.returnItem(ItemType.MOVIE, index);
+    }
+
     public boolean hasBookToReturn(){
         return itemManager.hasItemToReturn(ItemType.BOOK);
+    }
+
+    public boolean hasMovieToReturn(){
+        return itemManager.hasItemToReturn(ItemType.MOVIE);
     }
 
     public boolean hasAvailableBooks(){

@@ -23,8 +23,7 @@ public class ItemManager {
 
     public String getCheckedoutItemList(int type){
         if(type == ItemType.BOOK) return MessageContainer.getBookDetails(br.getCheckedoutItemList(), "Books to return");
-        return "";
-        //TODO implementar checkout de filme
+        return MessageContainer.getMovieDetails(mr.getCheckedoutItemList(), "Movies to return");
     }
 
     public boolean checkoutItem(int type, int index){
@@ -43,8 +42,7 @@ public class ItemManager {
 
     public boolean returnItem(int type, int index){
         if(type == ItemType.BOOK) return doReturn(br, index);
-        return false;
-        //TODO implementar retorno de filme
+        return doReturn(mr, index);
     }
 
     private boolean doReturn(ItemRepositoryInterface rep, int index){
