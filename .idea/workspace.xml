@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="575fb833-6883-43df-9282-42d5d347a41a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/test/twu-biblioteca-patriciaghiraldelli/Utils/MessageContainerTest.class" afterPath="$PROJECT_DIR$/out/test/twu-biblioteca-patriciaghiraldelli/Utils/MessageContainerTest.class" />
-      <change beforePath="$PROJECT_DIR$/out/test/twu-biblioteca-patriciaghiraldelli/com/twu/biblioteca/Controllers/TaskManagerTest.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Repository/ItemRepositoryInterface.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Repository/ItemRepositoryInterface.java" />
       <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Repository/MovieRepository.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Repository/MovieRepository.java" />
-      <change beforePath="$PROJECT_DIR$/test/Utils/MessageContainerTest.java" afterPath="$PROJECT_DIR$/test/Utils/MessageContainerTest.java" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/Controllers/TaskManagerTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/Controllers/ItemManagerTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -211,8 +205,8 @@
       <file leaf-file-name="MovieRepository.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Repository/MovieRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+            <state relative-caret-position="457">
+              <caret line="62" column="42" lean-forward="false" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
               <folding>
                 <element signature="e#542#548#0" expanded="true" />
                 <element signature="e#975#976#0" expanded="true" />
@@ -227,6 +221,8 @@
                 <element signature="e#1404#1405#0" expanded="true" />
                 <element signature="e#1468#1469#0" expanded="true" />
                 <element signature="e#1518#1519#0" expanded="true" />
+                <element signature="e#1736#1737#0" expanded="true" />
+                <element signature="e#1790#1791#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -657,37 +653,6 @@
               <item name="biblioteca" type="462c0819:PsiDirectoryNode" />
               <item name="Utils" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="twu-biblioteca-patriciaghiraldelli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="twu-biblioteca-patriciaghiraldelli" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="twu-biblioteca-patriciaghiraldelli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="twu-biblioteca-patriciaghiraldelli" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="biblioteca" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="twu-biblioteca-patriciaghiraldelli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="twu-biblioteca-patriciaghiraldelli" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="biblioteca" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="twu-biblioteca-patriciaghiraldelli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="twu-biblioteca-patriciaghiraldelli" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="biblioteca" type="462c0819:PsiDirectoryNode" />
-              <item name="Repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="twu-biblioteca-patriciaghiraldelli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="twu-biblioteca-patriciaghiraldelli" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="Utils" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -948,7 +913,7 @@
       <workItem from="1520716397625" duration="99000" />
       <workItem from="1520716607343" duration="57000" />
       <workItem from="1520716801676" duration="292000" />
-      <workItem from="1520861258646" duration="21706000" />
+      <workItem from="1520861258646" duration="21757000" />
     </task>
     <servers />
   </component>
@@ -985,7 +950,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24421000" />
+    <option name="totallyTimeSpent" value="24472000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1001,7 +966,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24253732" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1579602" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2761194" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21530758" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1435,8 +1400,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Repository/MovieRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+        <state relative-caret-position="457">
+          <caret line="62" column="42" lean-forward="false" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
           <folding>
             <element signature="e#542#548#0" expanded="true" />
             <element signature="e#975#976#0" expanded="true" />
@@ -1451,6 +1416,8 @@
             <element signature="e#1404#1405#0" expanded="true" />
             <element signature="e#1468#1469#0" expanded="true" />
             <element signature="e#1518#1519#0" expanded="true" />
+            <element signature="e#1736#1737#0" expanded="true" />
+            <element signature="e#1790#1791#0" expanded="true" />
           </folding>
         </state>
       </provider>
