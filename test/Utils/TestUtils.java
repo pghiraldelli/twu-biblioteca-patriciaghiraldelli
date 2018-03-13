@@ -4,6 +4,7 @@ import com.twu.biblioteca.Models.Book;
 import com.twu.biblioteca.Models.Item;
 import com.twu.biblioteca.Models.Movie;
 import com.twu.biblioteca.Repository.BookRepository;
+import com.twu.biblioteca.Repository.MovieRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,5 +32,10 @@ public class TestUtils {
     public void insertCheckedoutBook(BookRepository bs){
         Book book = new Book("Book", "Author", "1990");
         bs.addCheckedoutItem(book);
+    }
+
+    public void insertCheckedoutMovie(MovieRepository mr){
+        Movie movie = new Movie("Movie", "2000", "Director");
+        mr.addCheckedoutItem(movie);
     }
 }

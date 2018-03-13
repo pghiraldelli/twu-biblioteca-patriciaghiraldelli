@@ -98,4 +98,29 @@ public class ItemManagerTest extends TestUtils {
 
         assertEquals(0, im.getBookRepository().getCheckedoutItemList().size());
     }
+
+    @Test
+    public void shouldRemoveMovieFromReturnList(){
+        int indexToRemove = 0;
+        insertCheckedoutMovie(im.getMovieRepository());
+
+        assertTrue(im.getMovieRepository().getCheckedoutItemList().size() == 1);
+
+        im.returnItem(ItemType.MOVIE, indexToRemove);
+
+        assertTrue(im.getMovieRepository().getCheckedoutItemList().size() == 0);
+    }
+
+    @Test
+    public void shouldKeepMovieListWithInvalidBook(){
+        int indexToRemove = 100;
+        insertCheckedoutMovie(im.getMovieRepository());
+
+        List<Item> moviesBefore = im.getMovieRepository().getCheckedoutItemList();
+        im.returnItem(ItemType.MOVIE, indexToRemove);
+
+        assertEquals(im.getMovieRepository().getCheckedoutItemList().get(0), moviesBefore.get(0));
+
+        assertEquals(5, im.getMovieRepository().getItemList().size());
+    }
 }
