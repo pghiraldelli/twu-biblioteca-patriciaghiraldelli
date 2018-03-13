@@ -9,12 +9,13 @@ import com.twu.biblioteca.Utils.MessageContainer;
 public class ConsoleManager {
     private boolean runningTasks = true;
     private TaskManager taskMan;
+    private IOManager ioMan;
 
     public ConsoleManager() {
         BookRepository bookRepository = new BookRepository();
-        IOManager ioMan = new IOManager();
+        ioMan = new IOManager();
         MovieRepository movieRepository = new MovieRepository();
-        taskMan = new TaskManager(ioMan, bookRepository, movieRepository);
+        taskMan = new TaskManager(bookRepository, movieRepository);
     }
 
     public void mainMenu(){
@@ -35,7 +36,7 @@ public class ConsoleManager {
             case Task.QUIT:
                 return false;
             case Task.BOOKDETAILS:
-                taskMan.showBookList();
+                showBookList();
                 break;
             case Task.CHECKOUTBOOK:
                 runBookCheckout();
@@ -44,25 +45,38 @@ public class ConsoleManager {
                 runReturnBook();
                 break;
             case Task.MOVIEDETAILS:
-                taskMan.showMovieList();
+                showMovieList();
                 break;
             default:
-                taskMan.invalidOptionMessage();
+                showInvalidOptionMessage();
         }
         return true;
     }
 
-    private int askForInt(String text){
-        taskMan.getIOManager().printString(text);
-        return taskMan.getIOManager().readInt();
-    }
-
     private void showMenuOptions(){
-        taskMan.getIOManager().printString(MessageContainer.getMenuOptions());
+        this.ioMan.printString(MessageContainer.getMenuOptions());
     }
 
     private void showWelcomeMessage(){
-        taskMan.getIOManager().printString(MessageContainer.getWelcomeMessage());
+        this.ioMan.printString(MessageContainer.getWelcomeMessage());
+    }
+
+    private void showBookList(){
+        if(!taskMan.hasAvailableBooks()){
+            this.ioMan.printString("\n::Attention:: There are no available books. Choose another option.");
+            return;
+        }
+
+        this.ioMan.printString(taskMan.getBookList());
+    }
+
+    private void showMovieList(){
+        if(!taskMan.hasAvailableMovies()){
+            this.ioMan.printString("\n::Attention:: There are no available movies. Choose another option.");
+            return;
+        }
+
+        this.ioMan.printString(taskMan.getMovieList());
     }
 
     private void runBookCheckout(){
@@ -77,39 +91,48 @@ public class ConsoleManager {
         showFinalMessageToMovieCheckout(success);
     }
 
-    private void showFinalMessageToBookCheckout(boolean success){
-        if(success) {
-            taskMan.getIOManager().printString("\n::Success:: Thank you! Enjoy the book.\n");
-            return;
-        }
-        taskMan.getIOManager().printString("\n::Error:: That book is not available\n");
-    }
-
-    private void showFinalMessageToMovieCheckout(boolean success){
-        if(success) {
-            taskMan.getIOManager().printString("\n::Success:: Thank you! Enjoy the movie.\n");
-            return;
-        }
-        taskMan.getIOManager().printString("\n::Error:: That movie is not available\n");
-    }
-
     private void runReturnBook(){
-        if(taskMan.getBookRepository().getCheckedoutBookList().size() == 0){
-            taskMan.getIOManager().printString("\n::Attention:: There are no books to return. Choose another option.");
+        if(!taskMan.hasBookToReturn()){
+            this.ioMan.printString("\n::Attention:: There are no books to return. Choose another option.");
             return;
         }
 
-        taskMan.showCheckedBookList();
+        this.ioMan.printString(taskMan.getCheckedBookList());
         int index = askForInt("Enter the number of the book to return: ");
         boolean success = taskMan.returnBook(index);
         showFinalMessageToReturn(success);
     }
 
-    private void showFinalMessageToReturn(boolean success){
+    private void showFinalMessageToBookCheckout(boolean success){
         if(success) {
-            taskMan.getIOManager().printString("\n::Success:: Thank you for returning the book.\n");
+            this.ioMan.printString("\n::Success:: Thank you! Enjoy the book.\n");
             return;
         }
-        taskMan.getIOManager().printString("\n::Error:: That is not a valid book to return.\n");
+        this.ioMan.printString("\n::Error:: That book is not available\n");
+    }
+
+    private void showFinalMessageToMovieCheckout(boolean success){
+        if(success) {
+            this.ioMan.printString("\n::Success:: Thank you! Enjoy the movie.\n");
+            return;
+        }
+        this.ioMan.printString("\n::Error:: That movie is not available\n");
+    }
+
+    private void showFinalMessageToReturn(boolean success){
+        if(success) {
+            this.ioMan.printString("\n::Success:: Thank you for returning the book.\n");
+            return;
+        }
+        this.ioMan.printString("\n::Error:: That is not a valid book to return.\n");
+    }
+
+    private void showInvalidOptionMessage(){
+        this.ioMan.printString("\n::Error:: Select a valid option!");
+    }
+
+    private int askForInt(String text){
+        this.ioMan.printString(text);
+        return this.ioMan.readInt();
     }
 }

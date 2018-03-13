@@ -20,7 +20,7 @@ public class BookRepositoryTest extends TestUtils {
     @Test
     public void shouldGetBookList(){
         List<Item> expected = getBooks();
-        List<Item> results = br.getBookList();
+        List<Item> results = br.getItemList();
 
         assertEquals(expected.get(0), results.get(0));
         assertEquals(expected.get(1), results.get(1));

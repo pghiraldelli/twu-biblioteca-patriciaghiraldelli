@@ -30,6 +30,6 @@ public class TestUtils {
 
     public void insertCheckedoutBook(BookRepository bs){
         Book book = new Book("Book", "Author", "1990");
-        bs.addCheckedoutBook(book);
+        bs.addCheckedoutItem(book);
     }
 }

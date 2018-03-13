@@ -6,24 +6,17 @@ import com.twu.biblioteca.Models.Item;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookRepository {
+public class BookRepository implements ItemRepositoryInterface {
     private List<Item> bookList;
     private List<Item> checkedOutBooks;
 
     public BookRepository(){
-        this.bookList = createBookList();
+        this.bookList = createItemList();
         this.checkedOutBooks = new ArrayList<Item>();
     }
 
-    public List<Item> getBookList(){
-        return this.bookList;
-    }
-
-    public List<Item> getCheckedoutBookList(){
-        return this.checkedOutBooks;
-    }
-
-    private List<Item> createBookList(){
+    @Override
+    public List<Item> createItemList(){
         List<Item> books = new ArrayList<Item>();
         books.add(createBook("Book 1", "Author 1", "1994"));
         books.add(createBook("Book 2", "Author 2", "2018"));
@@ -31,23 +24,37 @@ public class BookRepository {
         return books;
     }
 
-    private Book createBook(String title, String author, String year){
-        return new Book(title, author, year);
+    @Override
+    public List<Item> getItemList(){
+        return this.bookList;
     }
 
-    public void removeBook(int index){
-        this.bookList.remove(index);
-    }
-
-    public void addBook(Book book){
+    @Override
+    public void addItem(Item book){
         this.bookList.add(book);
     }
 
-    public void addCheckedoutBook(Book book){
+    @Override
+    public void removeItem(int index){
+        this.bookList.remove(index);
+    }
+
+    @Override
+    public List<Item> getCheckedoutItemList(){
+        return this.checkedOutBooks;
+    }
+
+    @Override
+    public void addCheckedoutItem(Item book){
         this.checkedOutBooks.add(book);
     }
 
-    public void removeCheckedoutBook(int index){
+    @Override
+    public void removeCheckedoutItem(int index){
         this.checkedOutBooks.remove(index);
+    }
+
+    private Book createBook(String title, String author, String year){
+        return new Book(title, author, year);
     }
 }
