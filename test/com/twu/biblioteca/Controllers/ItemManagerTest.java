@@ -7,7 +7,6 @@ import com.twu.biblioteca.Models.ItemType;
 import com.twu.biblioteca.Models.Movie;
 import com.twu.biblioteca.Repository.BookRepository;
 import com.twu.biblioteca.Repository.MovieRepository;
-import com.twu.biblioteca.Utils.IOManager;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.List;
