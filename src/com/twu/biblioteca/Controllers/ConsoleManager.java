@@ -48,6 +48,9 @@ public class ConsoleManager {
             case Task.MOVIEDETAILS:
                 showMovieList();
                 break;
+            case Task.CHECKOUTMOVIE:
+                runMovieCheckout();
+                break;
             default:
                 showInvalidOptionMessage();
         }
