@@ -7,10 +7,10 @@ public class UserService {
 
     private String numberMask = "###-####";
 
-    public User newUser(String number, String password) throws Exception{
+    public User newUser(String number, String password, int type) throws Exception{
         verifyNumber(number);
         String formatted = StringUtils.formatString(number, numberMask);
-        return new User(formatted, password);
+        return new User(formatted, password, type);
     }
 
     private void verifyNumber(String num) throws Exception{

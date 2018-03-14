@@ -1,5 +1,6 @@
 package com.twu.biblioteca.Service;
 
+import com.twu.biblioteca.Models.UserType;
 import org.junit.Before;
 import org.junit.Test;
 import static junit.framework.TestCase.*;
@@ -19,7 +20,7 @@ public class UserServiceTest {
         String password = "pass";
 
         try{
-            us.newUser(number, password);
+            us.newUser(number, password, UserType.LIBRARIAN);
         }catch (Exception e){
             fail();
         }
@@ -31,7 +32,7 @@ public class UserServiceTest {
         String password = "pass";
 
         try{
-            us.newUser(number, password);
+            us.newUser(number, password, UserType.LIBRARIAN);
         }catch (Exception e){
             assertTrue(true);
             return;
