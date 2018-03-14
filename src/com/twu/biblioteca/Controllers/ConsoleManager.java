@@ -1,6 +1,7 @@
 package com.twu.biblioteca.Controllers;
 
 import com.twu.biblioteca.Models.Task;
+import com.twu.biblioteca.Models.UserType;
 import com.twu.biblioteca.Repository.BookRepository;
 import com.twu.biblioteca.Repository.MovieRepository;
 import com.twu.biblioteca.Repository.UserRepository;
@@ -83,6 +84,10 @@ public class ConsoleManager {
             case Task.RETURNMOVIE:
                 runReturnMovie();
                 break;
+            case Task.VIEWUSERSRESERVATION:
+                if(loginService.getLoggedUser().getType() != UserType.LIBRARIAN) showInvalidOptionMessage();
+                else showReservationsByUser();
+                break;
             default:
                 showInvalidOptionMessage();
         }
@@ -90,11 +95,21 @@ public class ConsoleManager {
     }
 
     private void showMenuOptions(){
-        this.ioMan.printString(MessageContainer.getMenuOptions());
+        this.ioMan.printString(MessageContainer.getMenuOptions(loginService.getLoggedUser()));
     }
 
     private void showWelcomeMessage(){
         this.ioMan.printString(MessageContainer.WELCOME_MESSAGE);
+    }
+
+    private void showReservationsByUser(){
+        String strReservation = taskMan.getReservationList();
+        if(strReservation.length() == 0){
+            this.ioMan.printString(MessageContainer.getNoAvaibleItemsMsg("reservations"));
+            return;
+        }
+
+        this.ioMan.printString(strReservation);
     }
 
     private void showBookList(){

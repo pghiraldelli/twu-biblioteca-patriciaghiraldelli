@@ -11,10 +11,16 @@ public class MessageContainer {
     public static final String WELCOME_MESSAGE = "~~~~ Welcome to Biblioteca! ~~~~";
     public static final String GOODBYE_MESSAGE = "~~~~ Thank you for using Biblioteca! Bye Bye! ~~~~";
 
-    public static String getMenuOptions(){
+    public static String getMenuOptions(User loogedUser){
         String menu = getActionTitle("Menu");
-        menu += getMenuGrid();
+        menu += getMenuGrid(loogedUser);
         return menu;
+    }
+
+    public static String getReservationDetails(List<User> users, String title){
+        String bookList = getActionTitle(title);
+        bookList += getReservationGrid(users);
+        return bookList;
     }
 
     public static String getBookDetails(List<Item> books, String title){
@@ -33,6 +39,17 @@ public class MessageContainer {
         String str = "\n--------------------------------\n";
         str +=  StringUtils.centralizeString("***  "+title+"  ***", MESSAGE_SIZE)+"\n";
         str +=       "--------------------------------\n";
+        return str;
+    }
+
+    private static String getReservationGrid(List<User> users){
+        String str = "";
+        for (User user : users) {
+            for (int i = 0; i < user.getReservationList().size() ; i++) {
+                Reservation reservation = user.getReservationList().get(i);
+                str += "| "+reservation.getUser().getNumber()+" | "+reservation.getItem().getName()+" |\n";
+            }
+        }
         return str;
     }
 
@@ -59,7 +76,7 @@ public class MessageContainer {
         return rate+"";
     }
 
-    private static String getMenuGrid(){
+    private static String getMenuGrid(User loggedUser){
         String str =        "|    0- Quit                |\n";
         str +=              "|    1- Book details        |\n";
         str +=              "|    2- Checkout book       |\n";
@@ -67,6 +84,8 @@ public class MessageContainer {
         str +=              "|    4- Movie details       |\n";
         str +=              "|    5- Checkout movie      |\n";
         str +=              "|    6- Return movie        |\n";
+        if(loggedUser.getType() == UserType.LIBRARIAN)
+            str +=          "|    7- Reservation details |\n";
         return str;
     }
 

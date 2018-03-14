@@ -30,10 +30,11 @@ public class MessageContainerTest extends TestUtils {
         expected += "|    2- Checkout book       |\n";
         expected += "|    3- Return book         |\n";
         expected += "|    4- Movie details       |\n";
-        expected +=              "|    5- Checkout movie      |\n";
-        expected +=              "|    6- Return movie        |\n";
+        expected += "|    5- Checkout movie      |\n";
+        expected += "|    6- Return movie        |\n";
+        expected += "|    7- Reservation details |\n";
 
-        assertEquals(expected, MessageContainer.getMenuOptions());
+        assertEquals(expected, MessageContainer.getMenuOptions(getLoggedUser()));
     }
 
     @Test
@@ -48,6 +49,19 @@ public class MessageContainerTest extends TestUtils {
         expected += "| 4 | Movie 5 | 2000 | Director 5 | 7 |\n";
 
         String result = MessageContainer.getMovieDetails(getMovies(), "Movie details");
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void shouldGetReservationDetails(){
+        String expected = "\n--------------------------------\n";
+        expected +=       "     ***  Reservations  ***     \n";
+        expected +=       "--------------------------------\n";
+        expected += "| 111-1111 | Movie 1 |\n";
+        expected += "| 111-1113 | Movie 1 |\n";
+
+        String result = MessageContainer.getReservationDetails(getUsers(), "Reservations");
+        System.out.println(result);
         assertEquals(expected, result);
     }
 }

@@ -40,9 +40,17 @@ public class TestUtils {
     public List<User> getUsers(){
         List<User> users = new ArrayList<User>();
         users.add(new User("111-1111", "pass", UserType.LIBRARIAN));
-        users.add(new User("111-1112", "pass", UserType.LIBRARIAN));
         users.add(new User("111-1113", "pass", UserType.CUSTOMER));
-        users.add(new User("111-1114", "pass", UserType.CUSTOMER));
+
+        for (User user: users) {
+            Reservation reservation = new Reservation(getMovies().get(0), user);
+            user.getReservationList().add(reservation);
+        }
+
         return users;
+    }
+
+    public User getLoggedUser(){
+        return getUsers().get(0);
     }
 }

@@ -1,5 +1,6 @@
 package com.twu.biblioteca.Controllers;
 
+import com.twu.biblioteca.Repository.UserRepository;
 import com.twu.biblioteca.Utils.TestUtils;
 import com.twu.biblioteca.Models.Book;
 import com.twu.biblioteca.Models.User;
@@ -19,13 +20,15 @@ public class ItemManagerTest extends TestUtils {
     private BookRepository br;
     private ItemManager im;
     private MovieRepository mr;
+    private UserRepository ur;
     private User user;
 
     @Before
     public void setUp() throws Exception {
         br = new BookRepository();
         mr = new MovieRepository();
-        im = new ItemManager(br, mr);
+        ur = new UserRepository();
+        im = new ItemManager(br, mr, ur);
         user = getUsers().get(0);
     }
 
@@ -130,7 +133,7 @@ public class ItemManagerTest extends TestUtils {
     @Test
     public void shouldAddReservationToUser() {
         im.checkoutItem(ItemType.BOOK, 0, user);
-        assertTrue(user.getReservationList().size() == 1 );
-        assertTrue(user.getReservationList().get(0).getItem().getType() == ItemType.BOOK);
+        assertTrue(user.getReservationList().size() == 2 );
+        assertTrue(user.getReservationList().get(1).getItem().getType() == ItemType.BOOK);
     }
 }

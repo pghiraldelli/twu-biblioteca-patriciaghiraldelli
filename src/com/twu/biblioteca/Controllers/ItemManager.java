@@ -4,20 +4,34 @@ import com.twu.biblioteca.Models.*;
 import com.twu.biblioteca.Repository.BookRepository;
 import com.twu.biblioteca.Repository.ItemRepositoryInterface;
 import com.twu.biblioteca.Repository.MovieRepository;
+import com.twu.biblioteca.Repository.UserRepository;
 import com.twu.biblioteca.Utils.MessageContainer;
 
 public class ItemManager {
     private BookRepository br;
     private MovieRepository mr;
+    private UserRepository ur;
 
-    public ItemManager(BookRepository br, MovieRepository mr) {
+    public ItemManager(BookRepository br, MovieRepository mr, UserRepository ur) {
         this.br = br;
         this.mr = mr;
+        this.ur = ur;
     }
 
     public String getItemList(int type){
         if(type == ItemType.BOOK) return MessageContainer.getBookDetails(br.getItemList(), "Book details");
-        return MessageContainer.getMovieDetails(mr.getItemList(), "Movie details");
+        else if(type == ItemType.MOVIE) return MessageContainer.getMovieDetails(mr.getItemList(), "Movie details");
+        else {
+            prepareReservations();
+            return MessageContainer.getReservationDetails(ur.getUsers(), "Reservations");
+        }
+    }
+
+    private void prepareReservations(){
+        Movie movie = new Movie("Movie A", "2000", "Director");
+        for(User user: ur.getUsers()){
+            user.getReservationList().add(new Reservation(movie, user));
+        }
     }
 
     public String getCheckedoutItemList(int type){

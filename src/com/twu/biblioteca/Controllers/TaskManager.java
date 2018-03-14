@@ -11,9 +11,11 @@ public class TaskManager{
     private LoginService ls;
 
     public TaskManager(BookRepository br, MovieRepository mr, UserRepository ur, LoginService ls) {
-        this.itemManager = new ItemManager(br,mr);
+        this.itemManager = new ItemManager(br,mr, ur);
         this.ls = ls;
     }
+
+    public String getReservationList(){ return  itemManager.getItemList(ItemType.RESERVATION);}
 
     public String getBookList(){
         return itemManager.getItemList(ItemType.BOOK);
