@@ -2,6 +2,7 @@ package com.twu.biblioteca.Controllers;
 
 import com.twu.biblioteca.Utils.TestUtils;
 import com.twu.biblioteca.Models.Book;
+import com.twu.biblioteca.Models.User;
 import com.twu.biblioteca.Models.Item;
 import com.twu.biblioteca.Models.ItemType;
 import com.twu.biblioteca.Models.Movie;
@@ -18,12 +19,14 @@ public class ItemManagerTest extends TestUtils {
     private BookRepository br;
     private ItemManager im;
     private MovieRepository mr;
+    private User user;
 
     @Before
     public void setUp() throws Exception {
         br = new BookRepository();
         mr = new MovieRepository();
         im = new ItemManager(br, mr);
+        user = getUsers().get(0);
     }
 
     @Test
@@ -32,7 +35,7 @@ public class ItemManagerTest extends TestUtils {
 
         Book bookToCheckout = (Book) im.getBookRepository().getItemList().get(indexToRemove);
 
-        im.checkoutItem(ItemType.BOOK, indexToRemove);
+        im.checkoutItem(ItemType.BOOK, indexToRemove, user);
 
         assertFalse(im.getBookRepository().getItemList().get(indexToRemove).equals(bookToCheckout));
     }
@@ -42,7 +45,7 @@ public class ItemManagerTest extends TestUtils {
         int indexToRemove = 100;
 
         List<Item> booksBefore = im.getBookRepository().getItemList();
-        im.checkoutItem(ItemType.BOOK, indexToRemove);
+        im.checkoutItem(ItemType.BOOK, indexToRemove, user);
 
         assertEquals(im.getBookRepository().getItemList().get(0), booksBefore.get(0));
         assertEquals(im.getBookRepository().getItemList().get(2), booksBefore.get(2));
@@ -81,7 +84,7 @@ public class ItemManagerTest extends TestUtils {
 
         Movie movieToCheckout = (Movie) im.getMovieRepository().getItemList().get(indexToRemove);
 
-        im.checkoutItem(ItemType.MOVIE, indexToRemove);
+        im.checkoutItem(ItemType.MOVIE, indexToRemove, user);
 
         assertFalse(im.getMovieRepository().getItemList().get(indexToRemove).equals(movieToCheckout));
     }
@@ -91,7 +94,7 @@ public class ItemManagerTest extends TestUtils {
         int indexToRemove = 100;
 
         List<Item> moviesBefore = im.getMovieRepository().getItemList();
-        im.checkoutItem(ItemType.MOVIE, indexToRemove);
+        im.checkoutItem(ItemType.MOVIE, indexToRemove, user);
 
         assertEquals(im.getMovieRepository().getItemList().get(0), moviesBefore.get(0));
         assertEquals(im.getMovieRepository().getItemList().get(2), moviesBefore.get(2));
@@ -122,5 +125,12 @@ public class ItemManagerTest extends TestUtils {
         assertEquals(im.getMovieRepository().getCheckedoutItemList().get(0), moviesBefore.get(0));
 
         assertEquals(5, im.getMovieRepository().getItemList().size());
+    }
+
+    @Test
+    public void shouldAddReservationToUser() {
+        im.checkoutItem(ItemType.BOOK, 0, user);
+        assertTrue(user.getReservationList().size() == 1 );
+        assertTrue(user.getReservationList().get(0).getItem().getType() == ItemType.BOOK);
     }
 }

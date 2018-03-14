@@ -8,9 +8,11 @@ import com.twu.biblioteca.Service.LoginService;
 
 public class TaskManager{
     private ItemManager itemManager;
+    private LoginService ls;
 
     public TaskManager(BookRepository br, MovieRepository mr, UserRepository ur, LoginService ls) {
         this.itemManager = new ItemManager(br,mr);
+        this.ls = ls;
     }
 
     public String getBookList(){
@@ -30,11 +32,11 @@ public class TaskManager{
     }
 
     public boolean checkoutBook(int index){
-        return itemManager.checkoutItem(ItemType.BOOK, index);
+        return itemManager.checkoutItem(ItemType.BOOK, index, ls.getLoggedUser());
     }
 
     public boolean checkoutMovie(int index){
-        return itemManager.checkoutItem(ItemType.MOVIE, index);
+        return itemManager.checkoutItem(ItemType.MOVIE, index, ls.getLoggedUser());
     }
 
     public boolean returnBook(int index){

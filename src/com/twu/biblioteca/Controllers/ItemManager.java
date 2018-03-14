@@ -1,7 +1,6 @@
 package com.twu.biblioteca.Controllers;
 
-import com.twu.biblioteca.Models.Item;
-import com.twu.biblioteca.Models.ItemType;
+import com.twu.biblioteca.Models.*;
 import com.twu.biblioteca.Repository.BookRepository;
 import com.twu.biblioteca.Repository.ItemRepositoryInterface;
 import com.twu.biblioteca.Repository.MovieRepository;
@@ -26,18 +25,24 @@ public class ItemManager {
         return MessageContainer.getMovieDetails(mr.getCheckedoutItemList(), "Movies to return");
     }
 
-    public boolean checkoutItem(int type, int index){
-        if(type == ItemType.BOOK) return doCheckout(this.br, index);
-        return doCheckout(this.mr, index);
+    public boolean checkoutItem(int type, int index, User user){
+        if(type == ItemType.BOOK) return doCheckout(this.br, index, user);
+        return doCheckout(this.mr, index, user);
     }
 
-    private boolean doCheckout (ItemRepositoryInterface rep, int index){
+    private boolean doCheckout (ItemRepositoryInterface rep, int index, User user){
         if(index >= rep.getItemList().size()) return false;
 
         Item item = rep.getItemList().get(index);
+        item.setStatus(ItemStatus.CHECKEDOUT);
         rep.removeItem(index);
         rep.addCheckedoutItem(item);
+        user.getReservationList().add(createReservation(user,item));
         return true;
+    }
+
+    private Reservation createReservation(User user, Item item){
+        return new Reservation(item, user);
     }
 
     public boolean returnItem(int type, int index){

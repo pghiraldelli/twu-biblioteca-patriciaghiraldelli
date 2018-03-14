@@ -1,8 +1,6 @@
 package com.twu.biblioteca.Utils;
 
-import com.twu.biblioteca.Models.Book;
-import com.twu.biblioteca.Models.Item;
-import com.twu.biblioteca.Models.Movie;
+import com.twu.biblioteca.Models.*;
 import com.twu.biblioteca.Repository.BookRepository;
 import com.twu.biblioteca.Repository.MovieRepository;
 
@@ -37,5 +35,14 @@ public class TestUtils {
     public void insertCheckedoutMovie(MovieRepository mr){
         Movie movie = new Movie("Movie", "2000", "Director");
         mr.addCheckedoutItem(movie);
+    }
+
+    public List<User> getUsers(){
+        List<User> users = new ArrayList<User>();
+        users.add(new User("111-1111", "pass", UserType.LIBRARIAN));
+        users.add(new User("111-1112", "pass", UserType.LIBRARIAN));
+        users.add(new User("111-1113", "pass", UserType.CUSTOMER));
+        users.add(new User("111-1114", "pass", UserType.CUSTOMER));
+        return users;
     }
 }
