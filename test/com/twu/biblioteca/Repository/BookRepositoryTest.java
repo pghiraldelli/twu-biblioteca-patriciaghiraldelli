@@ -1,9 +1,7 @@
 package com.twu.biblioteca.Repository;
 
-import Utils.TestUtils;
-import com.twu.biblioteca.Models.Book;
+import com.twu.biblioteca.Utils.TestUtils;
 import com.twu.biblioteca.Models.Item;
-import com.twu.biblioteca.Repository.BookRepository;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.List;

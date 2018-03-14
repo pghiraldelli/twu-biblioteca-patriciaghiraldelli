@@ -1,4 +1,4 @@
-package Utils;
+package com.twu.biblioteca.Utils;
 
 import com.twu.biblioteca.Utils.StringUtils;
 import org.junit.Test;

@@ -1,7 +1,5 @@
-package Utils;
+package com.twu.biblioteca.Utils;
 
-import com.twu.biblioteca.Utils.MessageContainer;
-import org.junit.Before;
 import org.junit.Test;
 import static junit.framework.TestCase.assertEquals;
 

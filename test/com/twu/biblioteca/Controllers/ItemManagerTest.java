@@ -1,6 +1,6 @@
 package com.twu.biblioteca.Controllers;
 
-import Utils.TestUtils;
+import com.twu.biblioteca.Utils.TestUtils;
 import com.twu.biblioteca.Models.Book;
 import com.twu.biblioteca.Models.Item;
 import com.twu.biblioteca.Models.ItemType;
