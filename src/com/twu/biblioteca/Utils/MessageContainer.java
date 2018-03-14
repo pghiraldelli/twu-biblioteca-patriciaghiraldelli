@@ -31,7 +31,7 @@ public class MessageContainer {
 
     private static String getActionTitle(String title){
         String str = "\n--------------------------------\n";
-        str +=  centralizeString("***  "+title+"  ***", MESSAGE_SIZE)+"\n";
+        str +=  StringUtils.centralizeString("***  "+title+"  ***", MESSAGE_SIZE)+"\n";
         str +=       "--------------------------------\n";
         return str;
     }
@@ -92,23 +92,5 @@ public class MessageContainer {
 
     public static String getSuccessReturnMsg(String itemName){
         return "\n::Success:: Thank you for returning the "+itemName+".\n";
-    }
-
-    private static String centralizeString(String str, int size){
-        int totalSpaces = size - str.length();
-        if(totalSpaces <= 0) return str.substring(0, size);
-
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < totalSpaces/2 ; i++) {
-            sb.append(" ");
-        }
-
-        sb.append(str);
-
-        for (int i = 0; i < totalSpaces/2 ; i++) {
-            sb.append(" ");
-        }
-
-        return sb.toString();
     }
 }
