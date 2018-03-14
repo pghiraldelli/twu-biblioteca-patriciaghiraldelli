@@ -3,27 +3,56 @@ package com.twu.biblioteca.Controllers;
 import com.twu.biblioteca.Models.Task;
 import com.twu.biblioteca.Repository.BookRepository;
 import com.twu.biblioteca.Repository.MovieRepository;
+import com.twu.biblioteca.Repository.UserRepository;
+import com.twu.biblioteca.Service.LoginService;
 import com.twu.biblioteca.Utils.IOManager;
 import com.twu.biblioteca.Utils.MessageContainer;
 
 public class ConsoleManager {
-    private boolean runningTasks = true;
     private TaskManager taskMan;
     private IOManager ioMan;
+    private LoginService loginService;
 
     public ConsoleManager() {
         ioMan = new IOManager();
         BookRepository bookRepository = new BookRepository();
         MovieRepository movieRepository = new MovieRepository();
-        taskMan = new TaskManager(bookRepository, movieRepository);
+        UserRepository userRepository = new UserRepository();
+        loginService = new LoginService(userRepository);
+        taskMan = new TaskManager(bookRepository, movieRepository, userRepository, loginService);
     }
 
-    public void mainMenu(){
+    public void runBiblioteca(){
         showWelcomeMessage();
+        runLogin();
+        showGoodbyeMessage();
+    }
+
+    private void runLogin(){
+        boolean tryAgain = true;
+
+        while (tryAgain){
+
+            String number = askForString("\nPlease enter your library number:");
+            String password = askForString("\nPlease enter your password:");
+            boolean success = loginService.login(number, password);
+
+            if(success){
+                tryAgain = false;
+                mainMenu();
+            }else{
+                this.ioMan.printString("\n::Error::Wrong credentials!");
+                String quit = askForString("\nWould you like to try again? Please enter 1 if yes.");
+                if(!quit.equals("1")) tryAgain = false;
+            }
+        }
+    }
+
+    private void mainMenu(){
+        boolean runningTasks = true;
         while(runningTasks){
             runningTasks = runMenu();
         }
-        showGoodbyeMessage();
     }
 
     private boolean runMenu(){
@@ -153,6 +182,11 @@ public class ConsoleManager {
     private int askForInt(String text){
         this.ioMan.printString(text);
         return this.ioMan.readInt();
+    }
+
+    private String askForString(String question){
+        this.ioMan.printString(question);
+        return this.ioMan.readString();
     }
 
     private void showGoodbyeMessage(){

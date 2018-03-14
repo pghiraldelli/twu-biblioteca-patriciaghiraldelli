@@ -3,11 +3,13 @@ package com.twu.biblioteca.Controllers;
 import com.twu.biblioteca.Models.ItemType;
 import com.twu.biblioteca.Repository.BookRepository;
 import com.twu.biblioteca.Repository.MovieRepository;
+import com.twu.biblioteca.Repository.UserRepository;
+import com.twu.biblioteca.Service.LoginService;
 
 public class TaskManager{
     private ItemManager itemManager;
 
-    public TaskManager(BookRepository br, MovieRepository mr) {
+    public TaskManager(BookRepository br, MovieRepository mr, UserRepository ur, LoginService ls) {
         this.itemManager = new ItemManager(br,mr);
     }
 

@@ -22,4 +22,12 @@ public class IOManager {
         return Task.INVALIDOPTION;
     }
 
+    public String readString(){
+        try {
+            return br.readLine().toString().trim();
+        } catch (Exception e) {
+        }
+
+        return "";
+    }
 }

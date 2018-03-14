@@ -11,4 +11,15 @@ public class User {
         this.type = type;
     }
 
+    public String getNumber() {
+        return number;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public int getType() {
+        return type;
+    }
 }
