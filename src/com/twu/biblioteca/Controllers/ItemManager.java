@@ -48,7 +48,6 @@ public class ItemManager {
         if(index >= rep.getItemList().size()) return false;
 
         Item item = rep.getItemList().get(index);
-        item.setStatus(ItemStatus.CHECKEDOUT);
         rep.removeItem(index);
         rep.addCheckedoutItem(item);
         user.getReservationList().add(createReservation(user,item));

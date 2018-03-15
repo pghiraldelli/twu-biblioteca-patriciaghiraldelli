@@ -6,7 +6,6 @@ public class Book extends Item{
 
     public Book(String title, String author, String year){
         setType(ItemType.BOOK);
-        setStatus(ItemStatus.AVAILABLE);
         this.name = title;
         this.responsible = author;
         this.year = year;

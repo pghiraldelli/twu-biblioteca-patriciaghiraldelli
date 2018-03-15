@@ -17,7 +17,6 @@ public class Movie extends Item{
 
     public Movie(String name, String year, String director) {
         this.setType(ItemType.MOVIE);
-        this.setStatus(ItemStatus.AVAILABLE);
         this.name = name;
         this.year = year;
         this.responsible = director;
