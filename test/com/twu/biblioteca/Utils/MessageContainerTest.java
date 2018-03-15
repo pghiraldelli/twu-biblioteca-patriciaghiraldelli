@@ -60,7 +60,7 @@ public class MessageContainerTest extends TestUtils {
         expected += "| 111-1111 | Movie 1 |\n";
         expected += "| 111-1113 | Movie 1 |\n";
 
-        String result = MessageContainer.getReservationDetails(getUsers(), "Reservations");
+        String result = MessageContainer.getReservationDetails(getCustomers(), "Reservations");
         System.out.println(result);
         assertEquals(expected, result);
     }

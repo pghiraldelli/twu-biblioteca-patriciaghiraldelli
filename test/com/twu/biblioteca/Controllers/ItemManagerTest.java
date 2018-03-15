@@ -1,12 +1,8 @@
 package com.twu.biblioteca.Controllers;
 
+import com.twu.biblioteca.Models.*;
 import com.twu.biblioteca.Repository.UserRepository;
 import com.twu.biblioteca.Utils.TestUtils;
-import com.twu.biblioteca.Models.Book;
-import com.twu.biblioteca.Models.User;
-import com.twu.biblioteca.Models.Item;
-import com.twu.biblioteca.Models.ItemType;
-import com.twu.biblioteca.Models.Movie;
 import com.twu.biblioteca.Repository.BookRepository;
 import com.twu.biblioteca.Repository.MovieRepository;
 import org.junit.Before;
@@ -21,7 +17,7 @@ public class ItemManagerTest extends TestUtils {
     private ItemManager im;
     private MovieRepository mr;
     private UserRepository ur;
-    private User user;
+    private Customer user;
 
     @Before
     public void setUp() throws Exception {
@@ -29,7 +25,7 @@ public class ItemManagerTest extends TestUtils {
         mr = new MovieRepository();
         ur = new UserRepository();
         im = new ItemManager(br, mr, ur);
-        user = getUsers().get(0);
+        user = getCustomers().get(0);
     }
 
     @Test

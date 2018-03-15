@@ -37,20 +37,20 @@ public class TestUtils {
         mr.addCheckedoutItem(movie);
     }
 
-    public List<User> getUsers(){
-        List<User> users = new ArrayList<User>();
-        users.add(new User("111-1111", "pass", UserType.LIBRARIAN));
-        users.add(new User("111-1113", "pass", UserType.CUSTOMER));
+    public List<Customer> getCustomers(){
+        List<Customer> customers = new ArrayList<Customer>();
+        customers.add(new Customer("111-1111", "pass", "Name1", "name1@email.com", "999887765"));
+        customers.add(new Customer("111-1113", "pass", "Name2", "name2@email.com", "675428237"));
 
-        for (User user: users) {
-            Reservation reservation = new Reservation(getMovies().get(0), user);
-            user.getReservationList().add(reservation);
+        for (Customer customer: customers) {
+            Reservation reservation = new Reservation(getMovies().get(0), customer);
+            customer.getReservationList().add(reservation);
         }
 
-        return users;
+        return customers;
     }
 
     public User getLoggedUser(){
-        return getUsers().get(0);
+        return new Librarian("111-1112", "pass");
     }
 }

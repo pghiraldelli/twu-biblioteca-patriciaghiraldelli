@@ -17,9 +17,9 @@ public class MessageContainer {
         return menu;
     }
 
-    public static String getReservationDetails(List<User> users, String title){
+    public static String getReservationDetails(List<Customer> customers, String title){
         String bookList = getActionTitle(title);
-        bookList += getReservationGrid(users);
+        bookList += getReservationGrid(customers);
         return bookList;
     }
 
@@ -42,9 +42,9 @@ public class MessageContainer {
         return str;
     }
 
-    private static String getReservationGrid(List<User> users){
+    private static String getReservationGrid(List<Customer> users){
         String str = "";
-        for (User user : users) {
+        for (Customer user : users) {
             for (int i = 0; i < user.getReservationList().size() ; i++) {
                 Reservation reservation = user.getReservationList().get(i);
                 str += "| "+reservation.getUser().getNumber()+" | "+reservation.getItem().getName()+" |\n";

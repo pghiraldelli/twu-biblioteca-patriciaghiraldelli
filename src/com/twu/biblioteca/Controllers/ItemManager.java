@@ -23,14 +23,14 @@ public class ItemManager {
         else if(type == ItemType.MOVIE) return MessageContainer.getMovieDetails(mr.getItemList(), "Movie details");
         else {
             prepareReservations();
-            return MessageContainer.getReservationDetails(ur.getUsers(), "Reservations");
+            return MessageContainer.getReservationDetails(ur.getCustomers(), "Reservations");
         }
     }
 
     private void prepareReservations(){
         Movie movie = new Movie("Movie A", "2000", "Director");
-        for(User user: ur.getUsers()){
-            user.getReservationList().add(new Reservation(movie, user));
+        for(Customer customer: ur.getCustomers()){
+            customer.getReservationList().add(new Reservation(movie, customer));
         }
     }
 
