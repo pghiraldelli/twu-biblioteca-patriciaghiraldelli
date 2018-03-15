@@ -88,6 +88,10 @@ public class ConsoleManager {
                 if(loginService.getLoggedUser().getType() != UserType.LIBRARIAN) showInvalidOptionMessage();
                 else showReservationsByUser();
                 break;
+            case Task.USERINFORMATION:
+                if(loginService.getLoggedUser().getType() != UserType.CUSTOMER) showInvalidOptionMessage();
+                else showLoggedUserInformation();
+                break;
             default:
                 showInvalidOptionMessage();
         }
@@ -100,6 +104,10 @@ public class ConsoleManager {
 
     private void showWelcomeMessage(){
         this.ioMan.printString(MessageContainer.WELCOME_MESSAGE);
+    }
+
+    private void showLoggedUserInformation(){
+        this.ioMan.printString(taskMan.getLoggedUserInformation());
     }
 
     private void showReservationsByUser(){

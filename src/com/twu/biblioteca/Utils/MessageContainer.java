@@ -17,6 +17,12 @@ public class MessageContainer {
         return menu;
     }
 
+    public static String getCustomerInformation(Customer loggedUser) {
+        String info = getActionTitle("User information");
+        info+= "\n| "+loggedUser.getName()+" | "+loggedUser.getEmail()+" | "+loggedUser.getTelephone()+" |\n";
+        return info;
+    }
+
     public static String getReservationDetails(List<Customer> customers, String title){
         String bookList = getActionTitle(title);
         bookList += getReservationGrid(customers);
@@ -86,6 +92,8 @@ public class MessageContainer {
         str +=              "|    6- Return movie        |\n";
         if(loggedUser.getType() == UserType.LIBRARIAN)
             str +=          "|    7- Reservation details |\n";
+        if(loggedUser.getType() == UserType.CUSTOMER)
+            str+=           "|    8- User information    |\n";
         return str;
     }
 
@@ -109,7 +117,7 @@ public class MessageContainer {
         return "\n::Error:: That is not a valid "+itemName+" to "+action+"\n";
     }
 
-    public static String getSuccessReturnMsg(String itemName){
-        return "\n::Success:: Thank you for returning the "+itemName+".\n";
+    public static String getSuccessReturnMsg(String itemName) {
+        return "\n::Success:: Thank you for returning the " + itemName + ".\n";
     }
 }

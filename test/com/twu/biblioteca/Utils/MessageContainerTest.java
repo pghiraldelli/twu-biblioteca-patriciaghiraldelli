@@ -1,5 +1,7 @@
 package com.twu.biblioteca.Utils;
 
+import com.twu.biblioteca.Models.Customer;
+import com.twu.biblioteca.Models.Librarian;
 import org.junit.Test;
 import static junit.framework.TestCase.assertEquals;
 
@@ -20,7 +22,7 @@ public class MessageContainerTest extends TestUtils {
     }
 
     @Test
-    public void shouldGetMenuOptions() {
+    public void shouldGetMenuOptionsForLibrarian() {
         String expected = "\n--------------------------------\n";
         expected += "         ***  Menu  ***         \n";
         expected += "--------------------------------\n";
@@ -34,7 +36,27 @@ public class MessageContainerTest extends TestUtils {
         expected += "|    6- Return movie        |\n";
         expected += "|    7- Reservation details |\n";
 
-        assertEquals(expected, MessageContainer.getMenuOptions(getLoggedUser()));
+        Librarian librarian = new Librarian("xx", "xx");
+        assertEquals(expected, MessageContainer.getMenuOptions(librarian));
+    }
+
+    @Test
+    public void shouldGetMenuOptionsForCustomer() {
+        String expected = "\n--------------------------------\n";
+        expected += "         ***  Menu  ***         \n";
+        expected += "--------------------------------\n";
+        ;
+        expected += "|    0- Quit                |\n";
+        expected += "|    1- Book details        |\n";
+        expected += "|    2- Checkout book       |\n";
+        expected += "|    3- Return book         |\n";
+        expected += "|    4- Movie details       |\n";
+        expected += "|    5- Checkout movie      |\n";
+        expected += "|    6- Return movie        |\n";
+        expected += "|    8- User information    |\n";
+
+        Customer customer = new Customer("xx", "xx", "xx", "xx", "xx");
+        assertEquals(expected, MessageContainer.getMenuOptions(customer));
     }
 
     @Test
@@ -61,7 +83,19 @@ public class MessageContainerTest extends TestUtils {
         expected += "| 111-1113 | Name2 | name2@email.com | 675428237 | Movie 1 |\n";
 
         String result = MessageContainer.getReservationDetails(getCustomers(), "Reservations");
-        System.out.println(result);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void shouldGetCustomerInformation() {
+
+        String expected = "\n--------------------------------\n";
+        expected +=       "   ***  User information  ***   \n";
+        expected +=       "--------------------------------\n";
+        expected +=       "\n| xx | xx | xx |\n";
+
+        Customer customer = new Customer("xx", "xx", "xx", "xx", "xx");
+        String result = MessageContainer.getCustomerInformation(customer);
         assertEquals(expected, result);
     }
 }

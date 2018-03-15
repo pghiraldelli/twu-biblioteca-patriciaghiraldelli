@@ -9,5 +9,6 @@ public class Task {
     public static final int CHECKOUTMOVIE = 5;
     public static final int RETURNMOVIE = 6;
     public static final int VIEWUSERSRESERVATION = 7;
+    public static final int USERINFORMATION = 8;
     public static final int INVALIDOPTION = 100;
 }

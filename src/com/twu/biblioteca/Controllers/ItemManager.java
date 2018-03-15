@@ -90,4 +90,8 @@ public class ItemManager {
     public MovieRepository getMovieRepository() {
         return mr;
     }
+
+    public String getCustomerInformation(Customer loggedUser) {
+        return MessageContainer.getCustomerInformation(loggedUser);
+    }
 }

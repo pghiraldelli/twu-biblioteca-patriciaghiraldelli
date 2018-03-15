@@ -1,5 +1,6 @@
 package com.twu.biblioteca.Controllers;
 
+import com.twu.biblioteca.Models.Customer;
 import com.twu.biblioteca.Models.ItemType;
 import com.twu.biblioteca.Repository.BookRepository;
 import com.twu.biblioteca.Repository.MovieRepository;
@@ -13,6 +14,10 @@ public class TaskManager{
     public TaskManager(BookRepository br, MovieRepository mr, UserRepository ur, LoginService ls) {
         this.itemManager = new ItemManager(br,mr, ur);
         this.ls = ls;
+    }
+
+    public  String getLoggedUserInformation(){
+        return itemManager.getCustomerInformation((Customer) ls.getLoggedUser());
     }
 
     public String getReservationList(){ return  itemManager.getItemList(ItemType.RESERVATION);}
