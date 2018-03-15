@@ -47,7 +47,7 @@ public class MessageContainer {
         for (Customer user : users) {
             for (int i = 0; i < user.getReservationList().size() ; i++) {
                 Reservation reservation = user.getReservationList().get(i);
-                str += "| "+reservation.getUser().getNumber()+" | "+reservation.getItem().getName()+" |\n";
+                str += "| "+user.getNumber()+" | "+user.getName()+" | "+user.getEmail()+" | "+user.getTelephone()+" | "+reservation.getItem().getName()+" |\n";
             }
         }
         return str;

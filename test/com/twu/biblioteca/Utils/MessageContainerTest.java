@@ -57,8 +57,8 @@ public class MessageContainerTest extends TestUtils {
         String expected = "\n--------------------------------\n";
         expected +=       "     ***  Reservations  ***     \n";
         expected +=       "--------------------------------\n";
-        expected += "| 111-1111 | Movie 1 |\n";
-        expected += "| 111-1113 | Movie 1 |\n";
+        expected += "| 111-1111 | Name1 | name1@email.com | 999887765 | Movie 1 |\n";
+        expected += "| 111-1113 | Name2 | name2@email.com | 675428237 | Movie 1 |\n";
 
         String result = MessageContainer.getReservationDetails(getCustomers(), "Reservations");
         System.out.println(result);

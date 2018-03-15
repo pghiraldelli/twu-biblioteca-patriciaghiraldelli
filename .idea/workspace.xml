@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3758ab80-3c3c-4942-bed3-988f1244a7ca" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/twu-biblioteca-patriciaghiraldelli/com/twu/biblioteca/Controllers/ItemManager.class" afterPath="$PROJECT_DIR$/out/production/twu-biblioteca-patriciaghiraldelli/com/twu/biblioteca/Controllers/ItemManager.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/twu-biblioteca-patriciaghiraldelli/com/twu/biblioteca/Controllers/TaskManager.class" afterPath="$PROJECT_DIR$/out/production/twu-biblioteca-patriciaghiraldelli/com/twu/biblioteca/Controllers/TaskManager.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/twu-biblioteca-patriciaghiraldelli/com/twu/biblioteca/Repository/UserRepository.class" afterPath="$PROJECT_DIR$/out/production/twu-biblioteca-patriciaghiraldelli/com/twu/biblioteca/Repository/UserRepository.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/twu-biblioteca-patriciaghiraldelli/com/twu/biblioteca/Utils/MessageContainer.class" afterPath="$PROJECT_DIR$/out/production/twu-biblioteca-patriciaghiraldelli/com/twu/biblioteca/Utils/MessageContainer.class" />
-      <change beforePath="$PROJECT_DIR$/out/test/twu-biblioteca-patriciaghiraldelli/com/twu/biblioteca/Controllers/ItemManagerTest.class" afterPath="$PROJECT_DIR$/out/test/twu-biblioteca-patriciaghiraldelli/com/twu/biblioteca/Controllers/ItemManagerTest.class" />
-      <change beforePath="$PROJECT_DIR$/out/test/twu-biblioteca-patriciaghiraldelli/com/twu/biblioteca/Utils/MessageContainerTest.class" afterPath="$PROJECT_DIR$/out/test/twu-biblioteca-patriciaghiraldelli/com/twu/biblioteca/Utils/MessageContainerTest.class" />
-      <change beforePath="$PROJECT_DIR$/out/test/twu-biblioteca-patriciaghiraldelli/com/twu/biblioteca/Utils/TestUtils.class" afterPath="$PROJECT_DIR$/out/test/twu-biblioteca-patriciaghiraldelli/com/twu/biblioteca/Utils/TestUtils.class" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Controllers/ItemManager.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Controllers/ItemManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Repository/UserRepository.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Repository/UserRepository.java" />
       <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Utils/MessageContainer.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Utils/MessageContainer.java" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/Controllers/ItemManagerTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/Controllers/ItemManagerTest.java" />
       <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/Utils/MessageContainerTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/Utils/MessageContainerTest.java" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/Utils/TestUtils.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/Utils/TestUtils.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -36,37 +24,71 @@
     </projectState>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Repository/UserRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#352#353#0" expanded="true" />
-                <element signature="e#384#385#0" expanded="true" />
-                <element signature="e#863#873#0" expanded="true" />
-                <element signature="e#1069#1070#0" expanded="true" />
-                <element signature="e#1097#1098#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserRepositoryTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/Repository/UserRepositoryTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="UserRepository.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Repository/UserRepository.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="225">
+                  <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#352#353#0" expanded="true" />
+                    <element signature="e#384#385#0" expanded="true" />
+                    <element signature="e#863#873#0" expanded="true" />
+                    <element signature="e#1069#1070#0" expanded="true" />
+                    <element signature="e#1097#1098#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MessageContainerTest.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/Utils/MessageContainerTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="447">
+                  <caret line="60" column="72" lean-forward="false" selection-start-line="60" selection-start-column="72" selection-end-line="60" selection-end-column="72" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TestUtils.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/Utils/TestUtils.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="507">
+                  <caret line="53" column="49" lean-forward="false" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
+                  <folding>
+                    <element signature="e#1407#1417#0" expanded="true" />
+                    <element signature="e#1883#1884#0" expanded="true" />
+                    <element signature="e#1939#1940#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="TestUtils.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/Utils/TestUtils.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="342">
+                  <caret line="42" column="93" lean-forward="false" selection-start-line="42" selection-start-column="84" selection-end-line="42" selection-end-column="93" />
+                  <folding>
+                    <element signature="e#1407#1417#0" expanded="true" />
+                    <element signature="e#1883#1884#0" expanded="true" />
+                    <element signature="e#1939#1940#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -384,16 +406,16 @@
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Models/ItemType.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Controllers/ConsoleManager.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Models/Librarian.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Utils/MessageContainer.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/Controllers/ItemManagerTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Repository/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Controllers/TaskManager.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Controllers/ItemManager.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Models/User.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Models/Customer.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/Utils/MessageContainerTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/Utils/TestUtils.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/Repository/UserRepositoryTest.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Utils/MessageContainer.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/Utils/MessageContainerTest.java" />
       </list>
     </option>
   </component>
@@ -546,7 +568,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BibliotecaApp">
+  <component name="RunManager" selected="JUnit.MessageContainerTest.shouldGetReservationDetails">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -750,11 +772,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.BibliotecaApp" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.MessageContainerTest.shouldGetReservationDetails" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.All in twu-biblioteca-patriciaghiraldelli" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ItemManagerTest.shouldAddReservationToUser" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ItemManagerTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.MessageContainerTest.shouldGetReservationDetails" />
+        <item index="2" class="java.lang.String" itemvalue="Application.BibliotecaApp" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ItemManagerTest.shouldAddReservationToUser" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ItemManagerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -772,7 +794,7 @@
       <option name="presentableId" value="Default" />
       <updated>1521035610917</updated>
       <workItem from="1521035612257" duration="46000" />
-      <workItem from="1521035685484" duration="18578000" />
+      <workItem from="1521035685484" duration="18891000" />
     </task>
     <servers />
   </component>
@@ -786,14 +808,14 @@
     <history-entry file="All_in_twu-biblioteca-patriciaghiraldelli - 2018.03.15 at 09h 59m 42s.xml">
       <configuration name="All in twu-biblioteca-patriciaghiraldelli" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_twu-biblioteca-patriciaghiraldelli - 2018.03.15 at 10h 08m 40s.xml">
+      <configuration name="All in twu-biblioteca-patriciaghiraldelli" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="ItemManagerTest - 2018.03.14 at 16h 49m 39s.xml">
       <configuration name="ItemManagerTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ItemManagerTest - 2018.03.14 at 16h 50m 25s.xml">
       <configuration name="ItemManagerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ItemManagerTest_shouldAddReservationToUser - 2018.03.14 at 16h 48m 30s.xml">
-      <configuration name="ItemManagerTest.shouldAddReservationToUser" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ItemManagerTest_shouldAddReservationToUser - 2018.03.14 at 16h 50m 42s.xml">
       <configuration name="ItemManagerTest.shouldAddReservationToUser" configurationId="JUnit" />
@@ -809,7 +831,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18624000" />
+    <option name="totallyTimeSpent" value="18937000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1075,14 +1097,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Utils/MessageContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-193">
-          <caret line="21" column="48" lean-forward="false" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Service/LoginService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -1091,18 +1105,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1071#1072#0" expanded="true" />
             <element signature="e#1104#1105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/Utils/TestUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="53" column="49" lean-forward="false" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
-          <folding>
-            <element signature="e#1407#1417#0" expanded="true" />
-            <element signature="e#1883#1884#0" expanded="true" />
-            <element signature="e#1939#1940#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1135,14 +1137,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/Utils/MessageContainerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-145">
-          <caret line="22" column="40" lean-forward="true" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Models/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1166,6 +1160,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/Controllers/ItemManagerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-268">
+          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/Repository/UserRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Controllers/ItemManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
@@ -1178,18 +1188,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/Controllers/ItemManagerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-268">
-          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Repository/UserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+        <state relative-caret-position="225">
+          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#352#353#0" expanded="true" />
@@ -1201,13 +1203,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/Repository/UserRepositoryTest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Utils/MessageContainer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        <state relative-caret-position="359">
+          <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/Utils/TestUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="53" column="49" lean-forward="false" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1407#1417#0" expanded="true" />
+            <element signature="e#1883#1884#0" expanded="true" />
+            <element signature="e#1939#1940#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/Utils/MessageContainerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="60" column="72" lean-forward="false" selection-start-line="60" selection-start-column="72" selection-end-line="60" selection-end-column="72" />
+          <folding />
         </state>
       </provider>
     </entry>
